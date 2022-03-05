@@ -4927,7 +4927,7 @@ Buff.ID6 = 36880
 
 # Announce the module when the player logs in?
 
-GamblerNPC.Announce = 0
+Gambler.Announce = 0
 
 # Gambling amounts in gold the player can choose from.
 # The random win/loss works well, but larger amounts can be abused.
@@ -4938,6 +4938,17 @@ Gambler.Amount2 = 2
 Gambler.Amount3 = 3
 Gambler.Amount4 = 4
 Gambler.Amount5 = 5
+
+#
+
+Gambler.MoneyType = 3
+Gambler.EnableGold = 1
+Gambler.EnableSilver = 1
+Gambler.EnableCopper = 1
+
+#
+
+Gambler.MessageTimer = 44940
 
 # Jackpot Amount In Gold (If 100 rolled in the first 10 bets)
 
