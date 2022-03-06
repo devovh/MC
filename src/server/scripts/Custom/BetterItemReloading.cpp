@@ -789,7 +789,6 @@ public:
           { "item_template",             HandleReloadItemTemplate,                  rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
           { "full_creature_template",    HandleReloadFullCreatureTemplate,          rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
         };
-        return customCommandTable;
 
         static ChatCommandTable commandTable =
         {
