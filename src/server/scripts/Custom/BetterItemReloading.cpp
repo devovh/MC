@@ -28,7 +28,7 @@ void SendCachePackets(Player* player, ItemTemplate* proto)
 
     LocaleConstant loc_idx = player->GetSession()->GetSessionDbLocaleIndex();
 
-    if (loc_idx >= 0)
+    if (loc_idx)
     {
         if (ItemLocale const* il = sObjectMgr->GetItemLocale(proto->ItemId))
         {

@@ -82,7 +82,7 @@ public:
 
         ChatHandler(receiver->GetSession()).PSendSysMessage("You will receive your item in your mailbox");
         // format: name "subject text" "mail text" item1[:count1] item2[:count2] ... item12[:count12]
-        uint64 receiverGuid = receiver->GetGUID();
+        receiver->GetGUID();
         std::string receiverName;
 
         std::string subject = "Reward System prize";

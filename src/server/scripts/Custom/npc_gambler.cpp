@@ -249,7 +249,7 @@ public:
         }
 
         // Gossip Select
-        bool OnGossipSelect(Player* player, uint32 menuId, uint32 gossipListId)
+        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId)
         {
             uint32 const sender = player->PlayerTalkClass->GetGossipOptionSender(gossipListId);
             uint32 const uiAction = player->PlayerTalkClass->GetGossipOptionAction(gossipListId);

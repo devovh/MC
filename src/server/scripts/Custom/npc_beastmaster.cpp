@@ -126,7 +126,7 @@ public:
         void CreatePet(Player* player, Creature* m_creature, uint32 entry) {
 
             // Get Pet Scale from config
-            const float PetScale = sConfigMgr->GetFloatDefault("BeastMaster.PetScale", 1.0);
+            sConfigMgr->GetFloatDefault("BeastMaster.PetScale", 1.0);
 
             // If enabled for Hunters only..
             if (sConfigMgr->GetBoolDefault("BeastMaster.HunterOnly", true))

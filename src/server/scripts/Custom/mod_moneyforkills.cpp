@@ -182,12 +182,12 @@ public:
                     if (killed->IsDungeonBoss())
                     {
                         // Pay the bounty amount
-                        CreatureBounty(player, killed, "DungeonBoss", BountyAmount);
+                        CreatureBounty(player, killed, "DungeonBoss", BountyAmount, NULL);
                     }
                     else
                     {
                         // Pay the bounty amount
-                        CreatureBounty(player, killed, "WorldBoss", BountyAmount);
+                        CreatureBounty(player, killed, "WorldBoss", BountyAmount, NULL);
                     }
                 }
             }
@@ -202,14 +202,14 @@ public:
                     const int BountyAmount = ((CreatureLevel * KillMultiplier) / 3);
 
                     // Pay the bounty amount
-                    CreatureBounty(player, killed, "MOB", BountyAmount);
+                    CreatureBounty(player, killed, "MOB", BountyAmount, NULL);
                 }
             }
         }
     }
 
     // Pay Creature Bounty
-    void CreatureBounty(Player* player, Creature* killed, std::string KillType, int bounty)
+    void CreatureBounty(Player* player, Creature* killed, std::string KillType, int bounty, int loot)
     {
         Group* group = player->GetGroup();
         Group::MemberSlotList const &members = group->GetMemberSlots();
@@ -223,7 +223,7 @@ public:
             player->ModifyMoney(bounty);
 
             // Inform the player of the bounty amount
-            Notify(player, NULL, killed, KillType, bounty, NULL);
+            Notify(player, NULL, killed, KillType, bounty, loot);
         }
         else
         {

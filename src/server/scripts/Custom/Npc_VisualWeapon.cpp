@@ -247,7 +247,7 @@ public:
         GetVisual(player);
     }
 
-    void OnLogin(Player* p, bool firstLogin)
+    void OnLogin(Player* p, bool /*firstLogin*/)
     {
         GetVisual(p);
     }
