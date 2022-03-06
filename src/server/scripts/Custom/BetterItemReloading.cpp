@@ -785,9 +785,9 @@ public:
     {
         static std::vector<ChatCommand> customCommandTable =
         {
-          { "better_reload",              rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleBetterItemReload,            "" },
-          { "item_template",              rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleReloadItemTemplate,          "" },
-          { "full_creature_template",     rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleReloadFullCreatureTemplate,  "" },
+          { "better",              rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleBetterItemReload,            "" },
+          { "itemtemplate",              rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleReloadItemTemplate,          "" },
+          { "fullcreaturetemplate",     rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleReloadFullCreatureTemplate,  "" },
         };
 
         static std::vector<ChatCommand> commandTable =
@@ -798,7 +798,7 @@ public:
         return commandTable;
     }
 
-    static bool HandleReloadItemTemplate(ChatHandler* handler, const char* args)
+    static bool HandleReloadItemTemplate(ChatHandler* handler, char const* args)
     {
         bool itemTemplateReloadEnabled = true;
         if (itemTemplateReloadEnabled)
@@ -814,7 +814,7 @@ public:
         return true;
     }
 
-    static bool HandleReloadFullCreatureTemplate(ChatHandler* handler, const char* args)
+    static bool HandleReloadFullCreatureTemplate(ChatHandler* handler, char const* args)
     {
         bool creatureTemplateReloadEnabled = true;
         if (creatureTemplateReloadEnabled)
@@ -831,7 +831,7 @@ public:
         return true;
     }
 
-    static bool HandleBetterItemReload(ChatHandler* handler, const char* args)
+    static bool HandleBetterItemReload(ChatHandler* handler, char const* args)
     {
         if (!*args)
             return false;
