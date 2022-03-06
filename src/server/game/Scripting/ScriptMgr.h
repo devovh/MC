@@ -958,6 +958,10 @@ class TC_GAME_API ScriptMgr
         void OnPacketReceive(WorldSession* session, WorldPacket const& packet);
         void OnPacketSend(WorldSession* session, WorldPacket const& packet);
 
+    public: /* Chat */
+
+        void OnChat(Player* /*player*/, uint32 /*type*/, uint32 /*lang*/, std::string& /*msg*/) { }
+
     public: /* WorldScript */
 
         void OnOpenStateChange(bool open);

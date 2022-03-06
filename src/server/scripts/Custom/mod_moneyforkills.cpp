@@ -130,7 +130,7 @@ public:
                     victim->ModifyMoney(-VictimLoot);
 
                     // Inform the player of the corpse loot
-                    Notify(player, victim, NULL, "Loot", BountyAmount, VictimLoot);
+                    Notify(player, victim, 0, "Loot", BountyAmount, VictimLoot);
 
                     // Pay the player the additional PVP bounty
                     player->ModifyMoney(BountyAmount);
@@ -142,7 +142,7 @@ public:
                 }
 
                 // Inform the player of the bounty amount
-                Notify(player, victim, NULL, "PVP", BountyAmount, VictimLoot);
+                Notify(player, victim, 0, "PVP", BountyAmount, VictimLoot);
 
                 return;
             }
@@ -182,12 +182,12 @@ public:
                     if (killed->IsDungeonBoss())
                     {
                         // Pay the bounty amount
-                        CreatureBounty(player, killed, "DungeonBoss", BountyAmount, NULL);
+                        CreatureBounty(player, killed, "DungeonBoss", BountyAmount);
                     }
                     else
                     {
                         // Pay the bounty amount
-                        CreatureBounty(player, killed, "WorldBoss", BountyAmount, NULL);
+                        CreatureBounty(player, killed, "WorldBoss", BountyAmount);
                     }
                 }
             }
@@ -202,14 +202,14 @@ public:
                     const int BountyAmount = ((CreatureLevel * KillMultiplier) / 3);
 
                     // Pay the bounty amount
-                    CreatureBounty(player, killed, "MOB", BountyAmount, NULL);
+                    CreatureBounty(player, killed, "MOB", BountyAmount);
                 }
             }
         }
     }
 
     // Pay Creature Bounty
-    void CreatureBounty(Player* player, Creature* killed, std::string KillType, int bounty, int loot)
+    void CreatureBounty(Player* player, Creature* killed, std::string KillType, int bounty)
     {
         Group* group = player->GetGroup();
         Group::MemberSlotList const &members = group->GetMemberSlots();
@@ -223,7 +223,7 @@ public:
             player->ModifyMoney(bounty);
 
             // Inform the player of the bounty amount
-            Notify(player, NULL, killed, KillType, bounty, loot);
+            Notify(player, 0, killed, KillType, bounty, 0);
         }
         else
         {
@@ -243,7 +243,7 @@ public:
                         playerInGroup->ModifyMoney(bounty);
 
                         // Inform the player of the bounty amount
-                        Notify(playerInGroup, NULL, killed, KillType, bounty, NULL);
+                        Notify(playerInGroup, 0, killed, KillType, bounty, 0);
                     }
                     else
                     {
@@ -254,7 +254,7 @@ public:
                             playerInGroup->ModifyMoney(bounty);
 
                             // Inform the player of the bounty amount
-                            Notify(playerInGroup, NULL, killed, KillType, bounty, NULL);
+                            Notify(playerInGroup, 0, killed, KillType, bounty, 0);
                         }
                     }
                 }

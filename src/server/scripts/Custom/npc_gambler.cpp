@@ -443,7 +443,8 @@ public:
                 messageAction << "The bones come to rest with a total roll of " << Roll << ".";
                 messageNotice << "Wowzers " << player->GetName() << "! You hit the jackpot and win " << Jackpot << " gold!";
                 creature->Whisper(messageAction.str().c_str(), LANG_UNIVERSAL, player);
-                player->GetSession()->SendNotification(messageNotice.str().c_str());
+                //player->GetSession()->SendNotification(messageNotice.str().c_str());
+                sWorld->SendServerMessage(SERVER_MSG_STRING, messageNotice.str().c_str());
                 CloseGossipMenuFor(player);
                 creature->HandleEmoteCommand(EMOTE_ONESHOT_APPLAUD);
                 return true;
