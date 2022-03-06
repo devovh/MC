@@ -785,9 +785,9 @@ public:
     {
         static ChatCommandTable customCommandTable =
         {
-          { "reload_better_reload",          rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleBetterItemReload,   "" },
-          { "reload_item_template",          rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleReloadItemTemplate, "" },
-          { "reload_full_creature_template", rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleReloadFullCreatureTemplate, "" },
+          { "reload_better_reload",             HandleBetterItemReload,                    rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
+          { "reload_item_template",             HandleReloadItemTemplate,                  rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
+          { "reload_full_creature_template",    HandleReloadFullCreatureTemplate,          rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
         };
         return customCommandTable;
     }

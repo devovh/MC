@@ -77,7 +77,7 @@ public:
             if (!bracketEntry)
                 return false;
 
-            GroupJoinBattlegroundResult(0);
+            //GroupJoinBattlegroundResult(0); //Add This leater..., Only Notice Warring.
 
             // check if already in queue
             if (player->GetBattlegroundQueueIndex(bgQueueTypeId) < PLAYER_MAX_BATTLEGROUND_QUEUES)
