@@ -773,6 +773,7 @@ void BetterLoadItem(Player* player, std::vector<uint32> itemID)
         TC_LOG_ERROR("sql.sql", "Item (Entry: %u) does not exist in `item_template` but is referenced in `CharStartOutfit.dbc`", *itr);
 }
 
+using namespace Trinity::ChatCommands;
 
 // Comand stuff
 class custom_reload_commands : public CommandScript
@@ -780,13 +781,13 @@ class custom_reload_commands : public CommandScript
 public:
     custom_reload_commands() : CommandScript("custom_reload_commands") { }
 
-    std::vector<ChatCommand> GetCommands() const
+    ChatCommandTable GetCommands() const override
     {
-        static std::vector<ChatCommand> customCommandTable =
+        static ChatCommandTable customCommandTable =
         {
-            { "reload_better_reload",          rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleBetterItemReload,   "" },
-        { "reload_item_template",          rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleReloadItemTemplate, "" },
-        { "reload_full_creature_template", rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleReloadFullCreatureTemplate, "" },
+          { "reload_better_reload",          rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleBetterItemReload,   "" },
+          { "reload_item_template",          rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleReloadItemTemplate, "" },
+          { "reload_full_creature_template", rbac::RBAC_PERM_COMMAND_RELOAD, true, &HandleReloadFullCreatureTemplate, "" },
         };
         return customCommandTable;
     }

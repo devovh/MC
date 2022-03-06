@@ -257,7 +257,7 @@ public:
             return true;
         }
 
-        bool OnGossipSelect(Player* player, uint32 menuId, uint32 gossipListId)
+        bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId)
         {
             player->PlayerTalkClass->GetGossipOptionSender(gossipListId);
             uint32 const action = player->PlayerTalkClass->GetGossipOptionAction(gossipListId);

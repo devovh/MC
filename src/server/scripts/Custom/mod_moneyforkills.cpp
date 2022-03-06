@@ -230,7 +230,7 @@ public:
             // Pay the group (OnCreatureKill only rewards the player that got the killing blow)
             for (Group::MemberSlotList::const_iterator itr = members.begin(); itr != members.end(); ++itr)
             {
-                Group::MemberSlot const &slot = *itr;
+                Group::MemberSlot; //const& slot = *itr;
                 Player* playerInGroup = ObjectAccessor::FindPlayer((*itr).guid);
 
                 // Pay each player in the group

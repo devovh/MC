@@ -33,7 +33,7 @@ class ChatLogScript : public PlayerScript
     public:
         ChatLogScript() : PlayerScript("ChatLogScript") { }
 
-        void OnChat(Player* player, uint32 type, uint32 lang, std::string& msg) override
+        void OnChat(Player* player, uint32 type, uint32 lang, std::string& msg)
         {
             switch (type)
             {
@@ -54,13 +54,13 @@ class ChatLogScript : public PlayerScript
             }
         }
 
-        void OnChat(Player* player, uint32 /*type*/, uint32 lang, std::string& msg, Player* receiver) override
+        void OnChat(Player* player, uint32 /*type*/, uint32 lang, std::string& msg, Player* receiver)
         {
             TC_LOG_CHAT("whisper", "Player %s tells %s: %s",
                player->GetName().c_str(), receiver ? receiver->GetName().c_str() : "<unknown>", msg.c_str());
         }
 
-        void OnChat(Player* player, uint32 type, uint32 lang, std::string& msg, Group* group) override
+        void OnChat(Player* player, uint32 type, uint32 lang, std::string& msg, Group* group)
         {
             //! NOTE:
             //! LANG_ADDON can only be sent by client in "PARTY", "RAID", "GUILD", "BATTLEGROUND", "WHISPER"
@@ -103,7 +103,7 @@ class ChatLogScript : public PlayerScript
             }
         }
 
-        void OnChat(Player* player, uint32 type, uint32 lang, std::string& msg, Guild* guild) override
+        void OnChat(Player* player, uint32 type, uint32 lang, std::string& msg, Guild* guild)
         {
             switch (type)
             {
@@ -119,7 +119,7 @@ class ChatLogScript : public PlayerScript
             }
         }
 
-        void OnChat(Player* player, uint32 /*type*/, uint32 lang, std::string& msg, Channel* channel) override
+        void OnChat(Player* player, uint32 /*type*/, uint32 lang, std::string& msg, Channel* channel)
         {
             bool isSystem = channel &&
                             (channel->HasFlag(CHANNEL_FLAG_TRADE) ||
