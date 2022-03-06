@@ -507,7 +507,7 @@ public:
                     {
                     case 1:
                     {
-                        me->Say("Come one, come all! Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, NULL);
+                        me->Say("Come one, come all! Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, 0);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_EXCLAMATION);
 
                         if (GamblerEmoteSpell != 0)
@@ -520,21 +520,21 @@ public:
                     }
                     case 2:
                     {
-                        me->Say("Come on! Place your bets, Don't be a chicken!", LANG_UNIVERSAL, NULL);
+                        me->Say("Come on! Place your bets, Don't be a chicken!", LANG_UNIVERSAL, 0);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_CHICKEN);
                         MessageTimer = urand(60000, 180000);
                         break;
                     }
                     case 3:
                     {
-                        me->Say("Don't make me sad, Come and gamble! Step right up and win today!", LANG_UNIVERSAL, NULL);
+                        me->Say("Don't make me sad, Come and gamble! Step right up and win today!", LANG_UNIVERSAL, 0);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_CRY);
                         MessageTimer = urand(60000, 180000);
                         break;
                     }
                     default:
                     {
-                        me->Say("Come one, come all!Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, NULL);
+                        me->Say("Come one, come all!Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, 0);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_EXCLAMATION);
                         me->CastSpell(me, 44940);
                         MessageTimer = urand(60000, 180000);

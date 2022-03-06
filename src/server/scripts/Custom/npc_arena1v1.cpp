@@ -65,7 +65,7 @@ public:
                 return false;
             }
 
-            if (DisableMgr::IsDisabledFor(DISABLE_TYPE_BATTLEGROUND, BATTLEGROUND_AA, NULL))
+            if (DisableMgr::IsDisabledFor(DISABLE_TYPE_BATTLEGROUND, BATTLEGROUND_AA, 0))
             {
                 ChatHandler(player->GetSession()).PSendSysMessage(LANG_ARENA_DISABLED);
                 return false;
@@ -111,7 +111,7 @@ public:
             BattlegroundQueue &bgQueue = sBattlegroundMgr->GetBattlegroundQueue(bgQueueTypeId);
             bg->SetRated(isRated);
 
-            GroupQueueInfo* ginfo = bgQueue.AddGroup(player, NULL, bgTypeId, bracketEntry, arenatype, isRated, false, arenaRating, matchmakerRating, ateamId);
+            GroupQueueInfo* ginfo = bgQueue.AddGroup(player, 0, bgTypeId, bracketEntry, arenatype, isRated, false, arenaRating, matchmakerRating, ateamId);
             uint32 avgTime = bgQueue.GetAverageQueueWaitTime(ginfo, bracketEntry->GetBracketId());
             uint32 queueSlot = player->AddBattlegroundQueueId(bgQueueTypeId);
 
@@ -149,7 +149,7 @@ public:
             teamName << player->GetName();
             do
             {
-                if (sArenaTeamMgr->GetArenaTeamByName(teamName.str()) != NULL) // teamname exist, so choose another name
+                if (sArenaTeamMgr->GetArenaTeamByName(teamName.str()) != 0) // teamname exist, so choose another name
                 {
                     teamName.str(std::string());
                     teamName << player->GetName() << (i++);

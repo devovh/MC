@@ -54,7 +54,7 @@ public:
         if (MuteTime == 0)
             return;
 
-        std::string MuteTimeStr = secsToTimeString(MuteTime - time(NULL));
+        std::string MuteTimeStr = secsToTimeString(MuteTime - time(0));
         std::string NameLink = ChatHandler(receiver->GetSession()).playerLink(receiver->GetName());
 
         ChatHandler(player->GetSession()).PSendSysMessage(RECEIVER_NOT_SPEAK, NameLink.c_str(), MuteTimeStr.c_str());
