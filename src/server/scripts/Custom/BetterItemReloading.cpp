@@ -785,11 +785,18 @@ public:
     {
         static ChatCommandTable customCommandTable =
         {
-          { "reload_better_reload",             HandleBetterItemReload,                    rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
-          { "reload_item_template",             HandleReloadItemTemplate,                  rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
-          { "reload_full_creature_template",    HandleReloadFullCreatureTemplate,          rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
+          { "better_reload",             HandleBetterItemReload,                    rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
+          { "item_template",             HandleReloadItemTemplate,                  rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
+          { "full_creature_template",    HandleReloadFullCreatureTemplate,          rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
         };
         return customCommandTable;
+
+        static ChatCommandTable commandTable =
+        {
+            { "btreload", customCommandTable },
+        };
+
+        return commandTable;
     }
 
     static bool HandleReloadItemTemplate(ChatHandler* handler, const char* args)

@@ -221,7 +221,7 @@ public:
 
             ClearGossipMenuFor(player);
 
-            switch (action)
+            switch (sender)
             {
             case 1: // Create new Arenateam
             {
