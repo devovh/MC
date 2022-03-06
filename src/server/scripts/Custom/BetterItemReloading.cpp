@@ -781,18 +781,18 @@ class custom_reload_commands : public CommandScript
 public:
     custom_reload_commands() : CommandScript("custom_reload_commands") { }
 
-    ChatCommandTable GetCommands() const override
+    std::vector<ChatCommand> GetCommands() const override
     {
-        static ChatCommandTable customCommandTable =
+        static std::vector<ChatCommand> customCommandTable =
         {
-          { "better_reload",             HandleBetterItemReload,                    rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
-          { "item_template",             HandleReloadItemTemplate,                  rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
-          { "full_creature_template",    HandleReloadFullCreatureTemplate,          rbac::RBAC_PERM_COMMAND_RELOAD, Console::Yes },
+          { "better_reload",              rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleBetterItemReload,            "" },
+          { "item_template",              rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleReloadItemTemplate,          "" },
+          { "full_creature_template",     rbac::RBAC_PERM_COMMAND_RELOAD, true,  &HandleReloadFullCreatureTemplate,  "" },
         };
 
-        static ChatCommandTable commandTable =
+        static std::vector<ChatCommand> commandTable =
         {
-            { "btreload", customCommandTable },
+            { "btreload",  rbac::RBAC_PERM_COMMAND_RELOAD,  true, nullptr, "", customCommandTable },
         };
 
         return commandTable;
