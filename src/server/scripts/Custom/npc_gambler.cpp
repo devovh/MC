@@ -127,7 +127,7 @@ public:
         }
     }
 };
-
+/*
 class GamblerAnnounce : public PlayerScript
 {
 
@@ -139,14 +139,14 @@ public:
         // Announce Module
         if (firstLogin)
         {
-            /*if (GamblerNPCAnnounce)
+            if (GamblerNPCAnnounce)
             {
                 ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00GamblerNPC |rmodule.");
-            }*/
+            }
         }
     }
 };
-
+*/
 class gamble_npc : public CreatureScript
 {
 
@@ -556,6 +556,6 @@ public:
 void AddSC_AddNPCGamblerScripts()
 {
     new GamblerConfig();
-    new GamblerAnnounce();
+    //new GamblerAnnounce();
     new gamble_npc();
 }

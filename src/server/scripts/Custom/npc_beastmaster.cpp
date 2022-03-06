@@ -93,7 +93,7 @@ on a Hunter in or out of dungeons.
 #include "WorldSession.h"
 #include "CreatureAI.h"
 #include "Config.h"
-
+/*
 class BeastMasterAnnounce : public PlayerScript
 {
 
@@ -105,14 +105,14 @@ public:
     {
         if (firstLogin) {
             // Announce Module
-            /*if (sConfigMgr->GetBoolDefault("BeastMasterNPC.Announce", true))
+            if (sConfigMgr->GetBoolDefault("BeastMasterNPC.Announce", true))
             {
                 ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00BeastMasterNPC |rmodule");
-            }*/
+            }
         }
     }
 };
-
+*/
 class BeastMaster : public CreatureScript
 {
 
@@ -547,6 +547,6 @@ public:
 
 void AddSC_AddBeastMasterScripts()
 {
-    new BeastMasterAnnounce();
+    //new BeastMasterAnnounce();
     new BeastMaster();
 }

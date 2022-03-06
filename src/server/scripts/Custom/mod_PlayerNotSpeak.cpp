@@ -41,7 +41,7 @@ class KargatumSC_PlayerNotSpeak : public PlayerScript
 public:
 	KargatumSC_PlayerNotSpeak() : PlayerScript("KargatumSC_PlayerNotSpeak") {}
 
-    void OnChat(Player* player, uint32 /*type*/, uint32 /*lang*/, std::string& /*msg*/, Player* receiver) override
+    void OnChat(Player* player, uint32 /*type*/, uint32 /*lang*/, std::string& /*msg*/, Player* receiver)
 	{
         if (!sConfigMgr->GetBoolDefault("PlayerNotSpeak.Enable", false))
             return;

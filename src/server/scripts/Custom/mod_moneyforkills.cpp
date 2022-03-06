@@ -130,7 +130,7 @@ public:
                     victim->ModifyMoney(-VictimLoot);
 
                     // Inform the player of the corpse loot
-                    Notify(player, victim, NULL, "Loot", NULL, VictimLoot);
+                    Notify(player, victim, NULL, "Loot", BountyAmount, VictimLoot);
 
                     // Pay the player the additional PVP bounty
                     player->ModifyMoney(BountyAmount);

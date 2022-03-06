@@ -18,7 +18,7 @@
 
 
 // Sending cache data for reloaded items
-static const void SendCachePackets(Player* player, ItemTemplate* proto)
+void SendCachePackets(Player* player, ItemTemplate* proto)
 {
     if (!player || !proto)
         return;

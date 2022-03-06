@@ -47,7 +47,7 @@ public:
             if (config_minLevel > player->GetLevel())
                 return false;
 
-            ObjectGuid guid = player->GetGUID();
+            uint32 guid = player->GetGUID();
             uint8 arenaslot = ArenaTeam::GetSlotByType(ARENA_TEAM_5v5);
             uint8 arenatype = ARENA_TYPE_5v5;
             uint32 arenaRating = 0;

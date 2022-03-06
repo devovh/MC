@@ -6,7 +6,6 @@ TODO* Fix sLog->outError
 #include "Player.h"
 #include "Chat.h"
 #include "DatabaseEnv.h"
-#include "log.h"
 #include "Mail.h"
 #include "Item.h"
 #include "DBCStores.h"
