@@ -158,7 +158,7 @@ public:
 
             player->PlayerTalkClass->ClearMenus();
 
-            switch (sender)
+            switch (action)
             {
             case VIS_GOSSIP_MAIN_HAND_ACTION:
                 MainHand = true;

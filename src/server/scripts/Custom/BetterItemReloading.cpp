@@ -18,7 +18,7 @@
 
 
 // Sending cache data for reloaded items
-void SendCachePackets(Player* player, ItemTemplate* proto)
+static const void SendCachePackets(Player* player, ItemTemplate* proto)
 {
     if (!player || !proto)
         return;
@@ -171,7 +171,7 @@ void BetterLoadItem(Player* player, std::vector<uint32> itemID)
     std::string str = ss.str();
     str.erase(str.length() - 2, 2);
 
-    getMSTime();
+    uint32 oldMSTime = getMSTime();
 
     //                                                 0      1       2               3              4        5        6       7          8         9        10        11           12
     QueryResult result = WorldDatabase.PQuery("SELECT entry, class, subclass, SoundOverrideSubclass, name, displayid, Quality, Flags, FlagsExtra, BuyCount, BuyPrice, SellPrice, InventoryType, "

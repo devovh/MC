@@ -16,7 +16,7 @@ public:
 
     IpTracker() : AccountScript("IpTracker"), WorldScript("IpTracker") { }
 
-    void OnLastIpUpdate()
+    void OnLastIpUpdate(uint32 accountId, std::string ip)
     {
         if (!sConfigMgr->GetBoolDefault(CONF_ENABLE_TRACKER, false))
         {

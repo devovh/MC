@@ -97,12 +97,12 @@ public:
         {
 
             // Get spells from config
-            const uint32 Buff1 = sConfigMgr->GetIntDefault("Buff.ID1", 0); // Prayer of Fortitude
-            const uint32 Buff2 = sConfigMgr->GetIntDefault("Buff.ID2", 0); // Greater Blessing of Kings
-            const uint32 Buff3 = sConfigMgr->GetIntDefault("Buff.ID3", 0); // Mark of the Wild
-            const uint32 Buff4 = sConfigMgr->GetIntDefault("Buff.ID4", 0); // Prayer of Spirit
-            const uint32 Buff5 = sConfigMgr->GetIntDefault("Buff.ID5", 0); // Prayer of Shadow Protection
-            const uint32 Buff6 = sConfigMgr->GetIntDefault("Buff.ID6", 0); // Arcane Intellect
+            const uint32 Buff1 = sConfigMgr->GetIntDefault("Buff.ID1", NULL); // Prayer of Fortitude
+            const uint32 Buff2 = sConfigMgr->GetIntDefault("Buff.ID2", NULL); // Greater Blessing of Kings
+            const uint32 Buff3 = sConfigMgr->GetIntDefault("Buff.ID3", NULL); // Mark of the Wild
+            const uint32 Buff4 = sConfigMgr->GetIntDefault("Buff.ID4", NULL); // Prayer of Spirit
+            const uint32 Buff5 = sConfigMgr->GetIntDefault("Buff.ID5", NULL); // Prayer of Shadow Protection
+            const uint32 Buff6 = sConfigMgr->GetIntDefault("Buff.ID6", NULL); // Arcane Intellect
 
             // Remove Ressurection Sickness?
             if (sConfigMgr->GetBoolDefault("Buff.CureRes", true))

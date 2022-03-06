@@ -130,7 +130,7 @@ public:
                     victim->ModifyMoney(-VictimLoot);
 
                     // Inform the player of the corpse loot
-                    Notify(player, victim, 0, "Loot", BountyAmount, VictimLoot);
+                    Notify(player, victim, NULL, "Loot", BountyAmount, VictimLoot);
 
                     // Pay the player the additional PVP bounty
                     player->ModifyMoney(BountyAmount);
@@ -142,7 +142,7 @@ public:
                 }
 
                 // Inform the player of the bounty amount
-                Notify(player, victim, 0, "PVP", BountyAmount, VictimLoot);
+                Notify(player, victim, NULL, "PVP", BountyAmount, VictimLoot);
 
                 return;
             }
@@ -166,11 +166,11 @@ public:
                 // Dungeon Boss or World Boss multiplier?
                 if (killed->IsDungeonBoss())
                 {
-                    BossMultiplier = sConfigMgr->GetIntDefault("MFK.DungeonBoss.Multiplier", 0);
+                    BossMultiplier = sConfigMgr->GetIntDefault("MFK.DungeonBoss.Multiplier", NULL);
                 }
                 else
                 {
-                    BossMultiplier = sConfigMgr->GetIntDefault("MFK.WorldBoss.Multiplier", 0);
+                    BossMultiplier = sConfigMgr->GetIntDefault("MFK.WorldBoss.Multiplier", NULL);
                 }
 
                 // If enabled...
@@ -193,7 +193,7 @@ public:
             }
             else
             {
-                const uint32 KillMultiplier = sConfigMgr->GetIntDefault("MFK.Kill.Multiplier", 0);
+                const uint32 KillMultiplier = sConfigMgr->GetIntDefault("MFK.Kill.Multiplier", NULL);
 
                 // If enabled...
                 if (KillMultiplier > 0)
@@ -223,14 +223,14 @@ public:
             player->ModifyMoney(bounty);
 
             // Inform the player of the bounty amount
-            Notify(player, 0, killed, KillType, bounty, 0);
+            Notify(player, 0, killed, KillType, bounty, NULL);
         }
         else
         {
             // Pay the group (OnCreatureKill only rewards the player that got the killing blow)
             for (Group::MemberSlotList::const_iterator itr = members.begin(); itr != members.end(); ++itr)
             {
-                //Group::MemberSlot const& slot = *itr;
+                Group::MemberSlot const& slot = *itr;
                 Player* playerInGroup = ObjectAccessor::FindPlayer((*itr).guid);
 
                 // Pay each player in the group
@@ -243,7 +243,7 @@ public:
                         playerInGroup->ModifyMoney(bounty);
 
                         // Inform the player of the bounty amount
-                        Notify(playerInGroup, 0, killed, KillType, bounty, 0);
+                        Notify(playerInGroup, 0, killed, KillType, bounty, NULL);
                     }
                     else
                     {
@@ -254,7 +254,7 @@ public:
                             playerInGroup->ModifyMoney(bounty);
 
                             // Inform the player of the bounty amount
-                            Notify(playerInGroup, 0, killed, KillType, bounty, 0);
+                            Notify(playerInGroup, 0, killed, KillType, bounty, NULL);
                         }
                     }
                 }

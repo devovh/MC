@@ -61,7 +61,7 @@ This code and content is released under the [GNU AGPL v3](https://github.com/aze
 #include "Unit.h"
 #include "Pet.h"
 #include "Player.h"
-#include "ScriptPCH.h"
+#include "ScriptMgr.h"
 #include "ScriptedGossip.h"
 #include "GossipDef.h"
 #include "World.h"
@@ -443,7 +443,7 @@ public:
                 messageAction << "The bones come to rest with a total roll of " << Roll << ".";
                 messageNotice << "Wowzers " << player->GetName() << "! You hit the jackpot and win " << Jackpot << " gold!";
                 creature->Whisper(messageAction.str().c_str(), LANG_UNIVERSAL, player);
-                //player->GetSession()->SendNotification(messageNotice.str().c_str());
+                player->GetSession()->SendNotification(messageNotice.str().c_str());
                 sWorld->SendServerMessage(SERVER_MSG_STRING, messageNotice.str().c_str());
                 CloseGossipMenuFor(player);
                 creature->HandleEmoteCommand(EMOTE_ONESHOT_APPLAUD);
@@ -507,7 +507,7 @@ public:
                     {
                     case 1:
                     {
-                        me->Say("Come one, come all! Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, 0);
+                        me->Say("Come one, come all! Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, NULL);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_EXCLAMATION);
 
                         if (GamblerEmoteSpell != 0)
@@ -520,21 +520,21 @@ public:
                     }
                     case 2:
                     {
-                        me->Say("Come on! Place your bets, Don't be a chicken!", LANG_UNIVERSAL, 0);
+                        me->Say("Come on! Place your bets, Don't be a chicken!", LANG_UNIVERSAL, NULL);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_CHICKEN);
                         MessageTimer = urand(60000, 180000);
                         break;
                     }
                     case 3:
                     {
-                        me->Say("Don't make me sad, Come and gamble! Step right up and win today!", LANG_UNIVERSAL, 0);
+                        me->Say("Don't make me sad, Come and gamble! Step right up and win today!", LANG_UNIVERSAL, NULL);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_CRY);
                         MessageTimer = urand(60000, 180000);
                         break;
                     }
                     default:
                     {
-                        me->Say("Come one, come all!Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, 0);
+                        me->Say("Come one, come all!Step right up to Skinny's! Place your bets, Place your bets!", LANG_UNIVERSAL, NULL);
                         me->HandleEmoteCommand(EMOTE_ONESHOT_EXCLAMATION);
                         me->CastSpell(me, 44940);
                         MessageTimer = urand(60000, 180000);

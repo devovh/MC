@@ -47,7 +47,7 @@ public:
             if (config_minLevel > player->GetLevel())
                 return false;
 
-            player->GetGUID();
+            ObjectGuid guid = player->GetGUID();
             uint8 arenaslot = ArenaTeam::GetSlotByType(ARENA_TEAM_5v5);
             uint8 arenatype = ARENA_TYPE_5v5;
             uint32 arenaRating = 0;
@@ -65,7 +65,7 @@ public:
                 return false;
             }
 
-            if (DisableMgr::IsDisabledFor(DISABLE_TYPE_BATTLEGROUND, BATTLEGROUND_AA, 0))
+            if (DisableMgr::IsDisabledFor(DISABLE_TYPE_BATTLEGROUND, BATTLEGROUND_AA, NULL))
             {
                 ChatHandler(player->GetSession()).PSendSysMessage(LANG_ARENA_DISABLED);
                 return false;
@@ -77,7 +77,7 @@ public:
             if (!bracketEntry)
                 return false;
 
-            //GroupJoinBattlegroundResult(0); //Add This leater..., Only Notice Warring.
+            GroupJoinBattlegroundResult err = ERR_GROUP_JOIN_BATTLEGROUND_FAIL;
 
             // check if already in queue
             if (player->GetBattlegroundQueueIndex(bgQueueTypeId) < PLAYER_MAX_BATTLEGROUND_QUEUES)
@@ -111,7 +111,7 @@ public:
             BattlegroundQueue &bgQueue = sBattlegroundMgr->GetBattlegroundQueue(bgQueueTypeId);
             bg->SetRated(isRated);
 
-            GroupQueueInfo* ginfo = bgQueue.AddGroup(player, 0, bgTypeId, bracketEntry, arenatype, isRated, false, arenaRating, matchmakerRating, ateamId);
+            GroupQueueInfo* ginfo = bgQueue.AddGroup(player, NULL, bgTypeId, bracketEntry, arenatype, isRated, false, arenaRating, matchmakerRating, ateamId);
             uint32 avgTime = bgQueue.GetAverageQueueWaitTime(ginfo, bracketEntry->GetBracketId());
             uint32 queueSlot = player->AddBattlegroundQueueId(bgQueueTypeId);
 
@@ -149,7 +149,7 @@ public:
             teamName << player->GetName();
             do
             {
-                if (sArenaTeamMgr->GetArenaTeamByName(teamName.str()) != 0) // teamname exist, so choose another name
+                if (sArenaTeamMgr->GetArenaTeamByName(teamName.str()) != NULL) // teamname exist, so choose another name
                 {
                     teamName.str(std::string());
                     teamName << player->GetName() << (i++);
@@ -221,7 +221,7 @@ public:
 
             ClearGossipMenuFor(player);
 
-            switch (sender)
+            switch (action)
             {
             case 1: // Create new Arenateam
             {

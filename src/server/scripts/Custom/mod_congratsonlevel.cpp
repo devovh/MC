@@ -94,10 +94,10 @@ public:
             case 10:
             {
                 // Level 10
-                const uint32 L101 = sConfigMgr->GetIntDefault("Congrats.L101", 0);
-                const uint32 L102 = sConfigMgr->GetIntDefault("Congrats.L102", 0);
-                const uint32 L10M = sConfigMgr->GetIntDefault("Congrats.L10M", 0);
-                const uint32 L10S = sConfigMgr->GetIntDefault("Congrats.L10S", 0);
+                const uint32 L101 = sConfigMgr->GetIntDefault("Congrats.L101", NULL);
+                const uint32 L102 = sConfigMgr->GetIntDefault("Congrats.L102", NULL);
+                const uint32 L10M = sConfigMgr->GetIntDefault("Congrats.L10M", NULL);
+                const uint32 L10S = sConfigMgr->GetIntDefault("Congrats.L10S", NULL);
 
                 level = "10";
                 item1 = L101;
@@ -110,10 +110,10 @@ public:
             case 20:
             {
                 // Level 20
-                const uint32 L201 = sConfigMgr->GetIntDefault("Congrats.L201", 0);
-                const uint32 L202 = sConfigMgr->GetIntDefault("Congrats.L202", 0);
-                const uint32 L20M = sConfigMgr->GetIntDefault("Congrats.L20M", 0);
-                const uint32 L20S = sConfigMgr->GetIntDefault("Congrats.L20S", 0);
+                const uint32 L201 = sConfigMgr->GetIntDefault("Congrats.L201", NULL);
+                const uint32 L202 = sConfigMgr->GetIntDefault("Congrats.L202", NULL);
+                const uint32 L20M = sConfigMgr->GetIntDefault("Congrats.L20M", NULL);
+                const uint32 L20S = sConfigMgr->GetIntDefault("Congrats.L20S", NULL);
 
                 level = "20";
                 item1 = L201;
@@ -126,10 +126,10 @@ public:
             case 30:
             {
                 // Level 30
-                const uint32 L301 = sConfigMgr->GetIntDefault("Congrats.L301", 0);
-                const uint32 L302 = sConfigMgr->GetIntDefault("Congrats.L302", 0);
-                const uint32 L30M = sConfigMgr->GetIntDefault("Congrats.L30M", 0);
-                const uint32 L30S = sConfigMgr->GetIntDefault("Congrats.L30S", 0);
+                const uint32 L301 = sConfigMgr->GetIntDefault("Congrats.L301", NULL);
+                const uint32 L302 = sConfigMgr->GetIntDefault("Congrats.L302", NULL);
+                const uint32 L30M = sConfigMgr->GetIntDefault("Congrats.L30M", NULL);
+                const uint32 L30S = sConfigMgr->GetIntDefault("Congrats.L30S", NULL);
 
                 level = "30";
                 item1 = L301;
@@ -142,10 +142,10 @@ public:
             case 40:
             {
                 // Level 40
-                const uint32 L401 = sConfigMgr->GetIntDefault("Congrats.L401", 0);
-                const uint32 L402 = sConfigMgr->GetIntDefault("Congrats.L402", 0);
-                const uint32 L40M = sConfigMgr->GetIntDefault("Congrats.L40M", 0);
-                const uint32 L40S = sConfigMgr->GetIntDefault("Congrats.L40S", 0);
+                const uint32 L401 = sConfigMgr->GetIntDefault("Congrats.L401", NULL);
+                const uint32 L402 = sConfigMgr->GetIntDefault("Congrats.L402", NULL);
+                const uint32 L40M = sConfigMgr->GetIntDefault("Congrats.L40M", NULL);
+                const uint32 L40S = sConfigMgr->GetIntDefault("Congrats.L40S", NULL);
 
                 level = "40";
                 item1 = L401;
@@ -158,10 +158,10 @@ public:
             case 50:
             {
                 // Level 50
-                const uint32 L501 = sConfigMgr->GetIntDefault("Congrats.L501", 0);
-                const uint32 L502 = sConfigMgr->GetIntDefault("Congrats.L502", 0);
-                const uint32 L50M = sConfigMgr->GetIntDefault("Congrats.L50M", 0);
-                const uint32 L50S = sConfigMgr->GetIntDefault("Congrats.L50S", 0);
+                const uint32 L501 = sConfigMgr->GetIntDefault("Congrats.L501", NULL);
+                const uint32 L502 = sConfigMgr->GetIntDefault("Congrats.L502", NULL);
+                const uint32 L50M = sConfigMgr->GetIntDefault("Congrats.L50M", NULL);
+                const uint32 L50S = sConfigMgr->GetIntDefault("Congrats.L50S", NULL);
 
                 level = "50";
                 item1 = L501;
@@ -174,10 +174,10 @@ public:
             case 60:
             {
                 // Level 60
-                const uint32 L601 = sConfigMgr->GetIntDefault("Congrats.L601", 0);
-                const uint32 L602 = sConfigMgr->GetIntDefault("Congrats.L602", 0);
-                const uint32 L60M = sConfigMgr->GetIntDefault("Congrats.L60M", 0);
-                const uint32 L60S = sConfigMgr->GetIntDefault("Congrats.L60S", 0);
+                const uint32 L601 = sConfigMgr->GetIntDefault("Congrats.L601", NULL);
+                const uint32 L602 = sConfigMgr->GetIntDefault("Congrats.L602", NULL);
+                const uint32 L60M = sConfigMgr->GetIntDefault("Congrats.L60M", NULL);
+                const uint32 L60S = sConfigMgr->GetIntDefault("Congrats.L60S", NULL);
 
                 level = "60";
                 item1 = L601;
@@ -190,10 +190,10 @@ public:
             case 70:
             {
                 // Level 70
-                const uint32 L701 = sConfigMgr->GetIntDefault("Congrats.L701", 0);
-                const uint32 L702 = sConfigMgr->GetIntDefault("Congrats.L702", 0);
-                const uint32 L70M = sConfigMgr->GetIntDefault("Congrats.L70M", 0);
-                const uint32 L70S = sConfigMgr->GetIntDefault("Congrats.L70S", 0);
+                const uint32 L701 = sConfigMgr->GetIntDefault("Congrats.L701", NULL);
+                const uint32 L702 = sConfigMgr->GetIntDefault("Congrats.L702", NULL);
+                const uint32 L70M = sConfigMgr->GetIntDefault("Congrats.L70M", NULL);
+                const uint32 L70S = sConfigMgr->GetIntDefault("Congrats.L70S", NULL);
 
                 level = "70";
                 item1 = L701;
@@ -206,10 +206,10 @@ public:
             case 80:
             {
                 // Level 80
-                const uint32 L801 = sConfigMgr->GetIntDefault("Congrats.L801", 0);
-                const uint32 L802 = sConfigMgr->GetIntDefault("Congrats.L802", 0);
-                const uint32 L80M = sConfigMgr->GetIntDefault("Congrats.L80M", 0);
-                const uint32 L80S = sConfigMgr->GetIntDefault("Congrats.L80S", 0);
+                const uint32 L801 = sConfigMgr->GetIntDefault("Congrats.L801", NULL);
+                const uint32 L802 = sConfigMgr->GetIntDefault("Congrats.L802", NULL);
+                const uint32 L80M = sConfigMgr->GetIntDefault("Congrats.L80M", NULL);
+                const uint32 L80S = sConfigMgr->GetIntDefault("Congrats.L80S", NULL);
 
                 level = "80";
                 item1 = L801;
@@ -252,7 +252,7 @@ public:
                 // Issue a raid warning to the player
                 std::ostringstream ss2;
                 ss2 << "Congrats on Level " << level << " " << player->GetName() << "! You've been awarded " << money << " gold and a few treasures!";
-                sWorld->SendServerMessage(SERVER_MSG_STRING, ss2.str().c_str());
+                player->GetSession()->SendNotification(ss2.str().c_str());
 
                 return;
             }
