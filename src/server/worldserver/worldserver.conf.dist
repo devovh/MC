@@ -353,7 +353,7 @@ ChangeWeatherInterval = 600000
 #        Description: Time (in milliseconds) for player save interval.
 #        Default:     90000 - (90 seconds)
 
-PlayerSaveInterval = 90000
+PlayerSaveInterval = 5000
 
 #
 #    PlayerSave.Stats.MinLevel
@@ -361,7 +361,7 @@ PlayerSaveInterval = 90000
 #        Default:     0  - (Disabled, Do not save character stats)
 #                     1+ - (Enabled, Level beyond which character stats are saved)
 
-PlayerSave.Stats.MinLevel = 0
+PlayerSave.Stats.MinLevel = 1
 
 #
 #    PlayerSave.Stats.SaveOnlyOnLogout
