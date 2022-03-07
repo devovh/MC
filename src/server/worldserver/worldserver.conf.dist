@@ -3996,6 +3996,7 @@ Appender.Server=2,2,0,Server.log,w
 Appender.GM=2,2,1,GM.log
 Appender.DBErrors=2,2,0,DBErrors.log
 Appender.Eluna=2,5,3,Eluna.log,a
+Appender.Chat=2,2,9,Chat%s.log,a
 
 #  Logger config values: Given a logger "name"
 #    Logger.name
@@ -4023,6 +4024,7 @@ Logger.sql.sql=5,Console DBErrors
 Logger.sql.updates=3,Console Server
 Logger.mmaps=3,Server
 Logger.eluna=1,Console Eluna
+Logger.chat.log=2,Chat
 
 #Logger.achievement=3,Console Server
 #Logger.addon=3,Console Server
