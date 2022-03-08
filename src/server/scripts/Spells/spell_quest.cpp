@@ -587,39 +587,6 @@ class spell_q12851_going_bearback : public AuraScript
     }
 };
 
-enum Whoarethey
-{
-    SPELL_MALE_DISGUISE = 38080,
-    SPELL_FEMALE_DISGUISE = 38081,
-    SPELL_GENERIC_DISGUISE = 32756
-};
-
-// 48917 - Who Are They: Cast from Questgiver
-class spell_q10041_q10040_who_are_they : public SpellScript
-{
-    PrepareSpellScript(spell_q10041_q10040_who_are_they);
-
-    bool Validate(SpellInfo const* /*spellEntry*/) override
-    {
-        return ValidateSpellInfo({ SPELL_MALE_DISGUISE, SPELL_FEMALE_DISGUISE, SPELL_GENERIC_DISGUISE });
-    }
-
-    void HandleScript(SpellEffIndex effIndex)
-    {
-        PreventHitDefaultEffect(effIndex);
-        if (Player* target = GetHitPlayer())
-        {
-            target->CastSpell(target, target->GetNativeGender() == GENDER_MALE ? SPELL_MALE_DISGUISE : SPELL_FEMALE_DISGUISE, true);
-            target->CastSpell(target, SPELL_GENERIC_DISGUISE, true);
-        }
-    }
-
-    void Register() override
-    {
-        OnEffectHitTarget += SpellEffectFn(spell_q10041_q10040_who_are_they::HandleScript, EFFECT_0, SPELL_EFFECT_SCRIPT_EFFECT);
-    }
-};
-
 // http://www.wowhead.com/quest=12659 Scalps!
 enum Quest12659Data
 {
@@ -777,36 +744,6 @@ class spell_q13280_13283_jump_jets : public SpellScript
     void Register() override
     {
         OnCast += SpellCastFn(spell_q13280_13283_jump_jets::HandleCast);
-    }
-};
-
-enum ChumTheWaterSummons
-{
-    SUMMON_ANGRY_KVALDIR = 66737,
-    SUMMON_NORTH_SEA_MAKO = 66738,
-    SUMMON_NORTH_SEA_THRESHER = 66739,
-    SUMMON_NORTH_SEA_BLUE_SHARK = 66740
-};
-
-// 66741 - Chum the Water
-class spell_q14112_14145_chum_the_water : public SpellScript
-{
-    PrepareSpellScript(spell_q14112_14145_chum_the_water);
-
-    bool Validate(SpellInfo const* /*spellEntry*/) override
-    {
-        return ValidateSpellInfo({ SUMMON_ANGRY_KVALDIR, SUMMON_NORTH_SEA_MAKO, SUMMON_NORTH_SEA_THRESHER, SUMMON_NORTH_SEA_BLUE_SHARK });
-    }
-
-    void HandleScriptEffect(SpellEffIndex /*effIndex*/)
-    {
-        Unit* caster = GetCaster();
-        caster->CastSpell(caster, RAND(SUMMON_ANGRY_KVALDIR, SUMMON_NORTH_SEA_MAKO, SUMMON_NORTH_SEA_THRESHER, SUMMON_NORTH_SEA_BLUE_SHARK));
-    }
-
-    void Register() override
-    {
-        OnEffectHitTarget += SpellEffectFn(spell_q14112_14145_chum_the_water::HandleScriptEffect, EFFECT_0, SPELL_EFFECT_SCRIPT_EFFECT);
     }
 };
 
@@ -2111,13 +2048,11 @@ void AddSC_quest_spell_scripts()
     RegisterSpellScript(spell_q12459_seeds_of_natures_wrath);
     RegisterSpellScript(spell_q12634_despawn_fruit_tosser);
     RegisterSpellScript(spell_q12851_going_bearback);
-    RegisterSpellScript(spell_q10041_q10040_who_are_they);
     RegisterSpellScript(spell_q12659_ahunaes_knife);
     RegisterSpellScript(spell_q9874_liquid_fire);
     RegisterSpellScript(spell_q12805_lifeblood_dummy);
     RegisterSpellScript(spell_q13280_13283_plant_battle_standard);
     RegisterSpellScript(spell_q13280_13283_jump_jets);
-    RegisterSpellScript(spell_q14112_14145_chum_the_water);
     RegisterSpellScript(spell_q9452_cast_net);
     RegisterSpellScript(spell_q12066_bunny_kill_credit);
     RegisterSpellScript(spell_q12372_cast_from_gossip_trigger);
