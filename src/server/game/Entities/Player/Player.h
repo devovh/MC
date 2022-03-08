@@ -1039,7 +1039,8 @@ class TC_GAME_API Player : public Unit, public GridObject<Player>
         void SetDeveloper(bool on) { ApplyModFlag(PLAYER_FLAGS, PLAYER_FLAGS_DEVELOPER, on); }
         bool isAcceptWhispers() const { return (m_ExtraFlags & PLAYER_EXTRA_ACCEPT_WHISPERS) != 0; }
         void SetAcceptWhispers(bool on) { if (on) m_ExtraFlags |= PLAYER_EXTRA_ACCEPT_WHISPERS; else m_ExtraFlags &= ~PLAYER_EXTRA_ACCEPT_WHISPERS; }
-        bool IsGameMaster() const { return (m_ExtraFlags & PLAYER_EXTRA_GM_ON) != 0; }
+        //bool IsGameMaster() const { return (m_ExtraFlags & PLAYER_EXTRA_GM_ON) != 0; }
+        bool IsGameMaster() const { return (m_ExtraFlags & PLAYER_EXTRA_GM_ON); }
         bool IsGameMasterAcceptingWhispers() const { return IsGameMaster() && isAcceptWhispers(); }
         bool CanBeGameMaster() const;
         void SetGameMaster(bool on);
@@ -1052,6 +1053,15 @@ class TC_GAME_API Player : public Unit, public GridObject<Player>
         bool Has310Flyer(bool checkAllSpells, uint32 excludeSpellId = 0);
         void SetHas310Flyer(bool on) { if (on) m_ExtraFlags |= PLAYER_EXTRA_HAS_310_FLYER; else m_ExtraFlags &= ~PLAYER_EXTRA_HAS_310_FLYER; }
         void SetPvPDeath(bool on) { if (on) m_ExtraFlags |= PLAYER_EXTRA_PVP_DEATH; else m_ExtraFlags &= ~PLAYER_EXTRA_PVP_DEATH; }
+
+        // Arena Spectator
+        bool HaveSpectators();
+        bool IsSpectateCanceled() { return spectateCanceled; }
+        void CancelSpectate() { spectateCanceled = true; }
+        Unit* GetSpectateFrom() { return spectateFrom; }
+        bool IsSpectator() const { return spectatorFlag; }
+        void SetSpectate(bool on);
+
         bool HasRaceChanged() const { return (m_ExtraFlags & PLAYER_EXTRA_HAS_RACE_CHANGED) != 0; }
         void SetHasRaceChanged() { m_ExtraFlags |= PLAYER_EXTRA_HAS_RACE_CHANGED; }
         bool HasBeenGrantedLevelsFromRaF() const { return (m_ExtraFlags & PLAYER_EXTRA_GRANTED_LEVELS_FROM_RAF) != 0; }
@@ -1467,7 +1477,8 @@ class TC_GAME_API Player : public Unit, public GridObject<Player>
         Player* GetSelectedPlayer() const;
 
         void SetTarget(ObjectGuid /*guid*/) override { } /// Used for serverside target changes, does not apply to players
-        void SetSelection(ObjectGuid guid) { SetGuidValue(UNIT_FIELD_TARGET, guid); }
+        //void SetSelection(ObjectGuid guid) { SetGuidValue(UNIT_FIELD_TARGET, guid); }
+        void SetSelection(ObjectGuid guid);
 
         void SendMailResult(uint32 mailId, MailResponseType mailAction, MailResponseResult mailError, uint32 equipError = 0, ObjectGuid::LowType item_guid = 0, uint32 item_count = 0) const;
         void SendNewMail() const;
@@ -2590,6 +2601,10 @@ class TC_GAME_API Player : public Unit, public GridObject<Player>
         InstanceTimeMap _instanceResetTimes;
         uint32 _pendingBindId;
         uint32 _pendingBindTimer;
+
+        bool spectatorFlag;
+        bool spectateCanceled;
+        Unit* spectateFrom;
 
         uint32 _activeCheats;
 

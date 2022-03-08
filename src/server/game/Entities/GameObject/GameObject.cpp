@@ -744,6 +744,11 @@ void GameObject::Update(uint32 diff)
                     }
                     else if (Unit* target = ObjectAccessor::GetUnit(*this, m_lootStateUnitGUID))
                     {
+                        // If player is spectator do not activate.
+                        if (Player* tmpPlayer = target->ToPlayer())
+                            if (tmpPlayer->IsSpectator())
+                                return;
+
                         // Some traps do not have a spell but should be triggered
                         CastSpellExtraArgs args;
                         args.SetOriginalCaster(GetOwnerGUID());

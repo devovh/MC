@@ -411,6 +411,20 @@ Unit::~Unit()
 
     m_Events.KillAllEvents(true);
 
+    // remove view point for spectator
+    if (!m_sharedVision.empty())
+    {
+        for (SharedVisionList::iterator itr = m_sharedVision.begin(); itr != m_sharedVision.end(); ++itr)
+            if ((*itr)->IsSpectator() && (*itr)->GetSpectateFrom())
+            {
+                (*itr)->SetViewpoint((*itr)->GetSpectateFrom(), false);
+
+                if (m_sharedVision.empty())
+                    break;
+                --itr;
+            }
+    }
+
     _DeleteRemovedAuras();
 
     delete i_motionMaster;
