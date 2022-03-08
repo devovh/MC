@@ -224,7 +224,7 @@ public:
                 // Issue a server notification for the player on level up.
                 std::ostringstream ss;
                 ss << "|cffFFFFFF[ |cffFF0000C|cffFFA500O|cffFFFF00N|cff00FF00G|cff00FFFFR|cff6A5ACDA|cffFF00FFT|cff98FB98S|cffFF0000! |cffFFFFFF] : |cff4CFF00 " << player->GetName() << " |cffFFFFFFhas reached |cff4CFF00Level " << std::to_string(player->GetLevel()) << "|cffFFFFFF!";
-                sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+                ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
                 break;
             }
             
@@ -237,7 +237,7 @@ public:
                 // Issue a server notification for the player on level up.
                 std::ostringstream ss;
                 ss << "|cffFFFFFF[ |cffFF0000C|cffFFA500O|cffFFFF00N|cff00FF00G|cff00FFFFR|cff6A5ACDA|cffFF00FFT|cff98FB98S|cffFF0000! |cffFFFFFF] : |cff4CFF00 " << player->GetName() << " |cffFFFFFFhas reached |cff4CFF00Level " << level << "|cffFFFFFF!";
-                sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+                ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
 
                 // Give the items to the player
                 player->AddItem(item1, 1);				// Defined Item 1
