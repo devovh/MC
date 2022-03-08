@@ -354,8 +354,17 @@ void WorldSession::HandleMessagechatOpcode(WorldPacket& recvData)
             Player* receiver = ObjectAccessor::FindConnectedPlayerByName(to);
             if (!receiver || (lang != LANG_ADDON && !receiver->isAcceptWhispers() && receiver->GetSession()->HasPermission(rbac::RBAC_PERM_CAN_FILTER_WHISPERS) && !receiver->IsInWhisperWhiteList(sender->GetGUID())))
             {
-                SendPlayerNotFoundNotice(to);
-                return;
+                // If Fake WHO List system on then show player DND
+                if (sWorld->getBoolConfig(CONFIG_FAKE_WHO_LIST))
+                  {
+                    sWorld->SendWorldText(LANG_NOT_WHISPER);
+                    return;
+                  }
+                else
+                {
+                    SendPlayerNotFoundNotice(to);
+                    return;
+                }
             }
 
             // Apply checks only if receiver is not already in whitelist and if receiver is not a GM with ".whisper on"

@@ -1466,7 +1466,15 @@ void Guild::HandleInviteMember(WorldSession* session, std::string_view name)
     Player* pInvitee = ObjectAccessor::FindPlayerByName(name);
     if (!pInvitee)
     {
-        SendCommandResult(session, GUILD_COMMAND_INVITE, ERR_GUILD_PLAYER_NOT_FOUND_S, name);
+       // If Fake WHO List system on then show player DND
+       if (sWorld->getBoolConfig(CONFIG_FAKE_WHO_LIST))
+         {
+           sWorld->SendWorldText(LANG_NOT_INVITE_GUILD);
+           return;
+         }
+       else {
+           SendCommandResult(session, GUILD_COMMAND_INVITE, ERR_GUILD_PLAYER_NOT_FOUND_S, name);
+         }
         return;
     }
 

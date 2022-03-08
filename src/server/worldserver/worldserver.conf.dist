@@ -1604,6 +1604,14 @@ AllowTwoSide.Interaction.Auction = 0
 
 AllowTwoSide.Trade = 0
 
+#    Fake.WHO.List
+#        Add fake players to fill in WHO LIST.
+#        49 real players online.
+#        Default: 1 (enabled)
+#                 0 (disabled)
+
+Fake.WHO.List = 1
+
 #
 #    TalentsInspecting
 #        Description: Allow/disallow inspecting other characters' talents.
