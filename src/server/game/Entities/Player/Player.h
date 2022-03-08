@@ -891,6 +891,42 @@ enum ReferAFriendError
     ERR_REFER_A_FRIEND_SUMMON_OFFLINE_S              = 0x0D
 };
 
+enum TalentTree // talent tabs
+{
+    TALENT_TREE_WARRIOR_ARMS = 161,
+    TALENT_TREE_WARRIOR_FURY = 164,
+    TALENT_TREE_WARRIOR_PROTECTION = 163,
+    TALENT_TREE_PALADIN_HOLY = 382,
+    TALENT_TREE_PALADIN_PROTECTION = 383,
+    TALENT_TREE_PALADIN_RETRIBUTION = 381,
+    TALENT_TREE_HUNTER_BEAST_MASTERY = 361,
+    TALENT_TREE_HUNTER_MARKSMANSHIP = 363,
+    TALENT_TREE_HUNTER_SURVIVAL = 362,
+    TALENT_TREE_ROGUE_ASSASSINATION = 182,
+    TALENT_TREE_ROGUE_COMBAT = 181,
+    TALENT_TREE_ROGUE_SUBTLETY = 183,
+    TALENT_TREE_PRIEST_DISCIPLINE = 201,
+    TALENT_TREE_PRIEST_HOLY = 202,
+    TALENT_TREE_PRIEST_SHADOW = 203,
+    TALENT_TREE_DEATH_KNIGHT_BLOOD = 398,
+    TALENT_TREE_DEATH_KNIGHT_FROST = 399,
+    TALENT_TREE_DEATH_KNIGHT_UNHOLY = 400,
+    TALENT_TREE_SHAMAN_ELEMENTAL = 261,
+    TALENT_TREE_SHAMAN_ENHANCEMENT = 263,
+    TALENT_TREE_SHAMAN_RESTORATION = 262,
+    TALENT_TREE_MAGE_ARCANE = 81,
+    TALENT_TREE_MAGE_FIRE = 41,
+    TALENT_TREE_MAGE_FROST = 61,
+    TALENT_TREE_WARLOCK_AFFLICTION = 302,
+    TALENT_TREE_WARLOCK_DEMONOLOGY = 303,
+    TALENT_TREE_WARLOCK_DESTRUCTION = 301,
+    TALENT_TREE_DRUID_BALANCE = 283,
+    TALENT_TREE_DRUID_FERAL_COMBAT = 281,
+    TALENT_TREE_DRUID_RESTORATION = 282
+};
+
+#define SPEC_MASK_ALL 255
+
 enum PlayerRestState : uint8
 {
     REST_STATE_RESTED                                = 0x01,
@@ -1563,7 +1599,11 @@ class TC_GAME_API Player : public Unit, public GridObject<Player>
         void SetSpecsCount(uint8 count) { m_specsCount = count; }
         void ActivateSpec(uint8 spec);
         void LoadActions(PreparedQueryResult result);
-
+        bool HasTankSpec();
+        bool HasMeleeSpec();
+        bool HasCasterSpec();
+        bool HasHealSpec();
+        uint32 GetSpec(int8 spec = -1);
         void InitGlyphsForLevel();
         void SetGlyphSlot(uint8 slot, uint32 slottype) { SetUInt32Value(PLAYER_FIELD_GLYPH_SLOTS_1 + slot, slottype); }
         uint32 GetGlyphSlot(uint8 slot) { return GetUInt32Value(PLAYER_FIELD_GLYPH_SLOTS_1 + slot); }

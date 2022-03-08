@@ -5053,3 +5053,19 @@ MailBox = 1
 #       Description: Time (in seconds) before despawn of summoned NPC
 #       Default:    60 - (Seconds)
 #Premium.NpcDuration = 60 - Disabled Perm Add to Script in Source. Always 60 sec.
+
+###################################################################################################
+#	Announce if a world boss killed by someone
+###################################################################################################
+
+# Enable the module? (1: true | 0: false)
+
+Boss.Announcer.Enable = 1
+
+# Announce the module when the player logs in?
+
+#Boss.Announcer.Announce = 0 ## Disabled in Source.
+
+# Remove Aura such as bloodlust debuff upon boss kill?
+
+Boss.Announcer.RemoveAuraUponKill = 1
