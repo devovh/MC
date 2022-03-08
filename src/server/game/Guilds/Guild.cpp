@@ -1472,10 +1472,11 @@ void Guild::HandleInviteMember(WorldSession* session, std::string_view name)
            sWorld->SendWorldText(LANG_NOT_INVITE_GUILD);
            return;
          }
-       else {
+       else 
+	     {
            SendCommandResult(session, GUILD_COMMAND_INVITE, ERR_GUILD_PLAYER_NOT_FOUND_S, name);
          }
-        return;
+       return;
     }
 
     Player* player = session->GetPlayer();

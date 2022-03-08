@@ -72,16 +72,8 @@ void WorldSession::HandleGroupInviteOpcode(WorldPacket& recvData)
     // cheating
     if (!normalizePlayerName(membername))
     {
-        if (sWorld->getBoolConfig(CONFIG_FAKE_WHO_LIST))
-          {
-            sWorld->SendWorldText(LANG_NOT_INVITE_PARTY);
-            return;
-          }
-        else
-        {
-            SendPartyResult(PARTY_OP_INVITE, membername, ERR_BAD_PLAYER_NAME_S);
-        }
-        return;
+        SendPartyResult(PARTY_OP_INVITE, membername, ERR_BAD_PLAYER_NAME_S);
+        return; 
     }
 
     Player* invitingPlayer = GetPlayer();
@@ -90,7 +82,15 @@ void WorldSession::HandleGroupInviteOpcode(WorldPacket& recvData)
     // no player
     if (!invitedPlayer)
     {
-        SendPartyResult(PARTY_OP_INVITE, membername, ERR_BAD_PLAYER_NAME_S);
+        if (sWorld->getBoolConfig(CONFIG_FAKE_WHO_LIST))
+        {
+            sWorld->SendWorldText(LANG_NOT_INVITE_PARTY);
+            return;
+        }
+        else
+        {
+            SendPartyResult(PARTY_OP_INVITE, membername, ERR_BAD_PLAYER_NAME_S);
+        }
         return;
     }
 
