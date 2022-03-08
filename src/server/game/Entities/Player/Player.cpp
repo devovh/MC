@@ -27136,7 +27136,8 @@ void Player::SetSpectate(bool on)
 {
     if (on)
     {
-        SetSpeed(MOVE_RUN, 5.0);
+        SetSpeed(MOVE_RUN, 30.0);
+        SetMovement(MOVE_WATER_WALK);
         spectatorFlag = true;
 
         m_ExtraFlags |= PLAYER_EXTRA_GM_ON;
@@ -27191,7 +27192,7 @@ void Player::SetSpectate(bool on)
         spectateCanceled = false;
         spectatorFlag = false;
         RestoreDisplayId();
-        UpdateSpeed(MOVE_FLIGHT);
+        UpdateSpeed(MOVE_RUN);
     }
     UpdateObjectVisibility();
 }
