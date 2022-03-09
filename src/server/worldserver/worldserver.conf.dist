@@ -4924,7 +4924,7 @@ Buff.CureRes = 1
 # Fun Stuff
 # 48612 (Dalron the Controller)
 
-# Buff.ID1 = 48612 - Kill You on Click NPC. Disabled.
+Buff.ID1 = 48162
 Buff.ID2 = 43223
 Buff.ID3 = 48469
 Buff.ID4 = 48074
