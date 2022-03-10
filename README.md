@@ -6,7 +6,7 @@
 
 * How to Compile - Read Wiki: https://trinitycore.info/en/home
 
-* Based on TrinityCore.
+* Based on TrinityCore 3.3.5a latest release, Updates are added every now and then.
 
 # Add Custom in Game:
 
