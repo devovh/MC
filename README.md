@@ -1,4 +1,4 @@
-****MC Wotlk 3.3.5a
+# MC Wotlk 3.3.5a
 
 * Lua Scripts Support.
 
@@ -8,9 +8,9 @@
 
 * Based on TrinityCore.
 
-***Add Custom in Game:
+# Add Custom in Game:
 
-**NPC:
+# NPC:
 
 * .npc add 55003 - Weapon NPC Ilussion Enchant
 
@@ -30,30 +30,30 @@
 
 * .npc add 190001 - Arena 1v1 NPC
 
-**ITEM:
+# ITEM:
 
 * .add item 9017 - Premium Item, Add on Website Store - This item not lootable.
 
-**FUNCTION:
+# FUNCTION:
 
-*IRC System
+* IRC System
 
-*VAS Autoblance
+* VAS Autoblance
 
-*BetterItemReloading
+* BetterItemReloading
 
-*Crossfaction Battleground
+* Crossfaction Battleground
 
-*Ip Tracker
+* Ip Tracker
 
-*Boss Announcer
+* Boss Announcer
 
-*Congrats on Level
+* Congrats on Level
 
-*Fireworks on Level
+* Fireworks on Level
 
-*Money for Kills
+* Money for Kills
 
-*Player not Speak
+* Player not Speak
 
-*Reward System
+* Reward System
