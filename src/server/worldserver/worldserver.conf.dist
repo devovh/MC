@@ -5075,10 +5075,10 @@ Boss.Announcer.RemoveAuraUponKill = 1
 #########################################################
 # irc.active
 # Enable TriniChat Addon
-# Default: 1 - Enable
-# 0 - Disable
+# Default: 0 - Disabled
+# 1 - Enabled
 #
-irc.active = 1
+irc.active = 0
 
 ##################################################
 # irc.icc
