@@ -12,23 +12,23 @@
 
 # NPC:
 
-* .npc add 55003 - Weapon NPC Ilussion Enchant
+* .npc add 55003 - Weapon NPC Ilussion Enchant.
 
-* .npc add 190014 - Beast Master NPC
+* .npc add 190014 - Beast Master NPC.
 
-* .npc add 190015 , .npc add 190016 - Buff NPC
+* .npc add 190015 , .npc add 190016 - Buff NPC.
 
-* .npc add 190002 - Gambler NPC
+* .npc add 190002 - Gambler NPC.
 
-* .npc add 190000 - Portal Master NPC
+* .npc add 190000 - Portal Master NPC.
 
-* .npc add 190017 - Multi Trainer Example NPC
+* .npc add 190017 - Multi Trainer Example NPC.
 
-* .npc add 190018 - Multi Vendor Example NPC
+* .npc add 190018 - Multi Vendor Example NPC.
 
-* .npc add 190010 - Transmogrifier NPC
+* .npc add 190010 - Transmogrifier NPC.
 
-* .npc add 190001 - Arena 1v1 NPC
+* .npc add 190001 - Arena 1v1 NPC.
 
 # ITEM:
 
@@ -36,24 +36,36 @@
 
 # FUNCTION:
 
-* IRC System
+* IRC System.
 
-* VAS Autoblance
+* Passive Anticheat.
 
-* BetterItemReloading
+* PvP Ranks.
 
-* Crossfaction Battleground
+* GoMove.
 
-* Ip Tracker
+* Arena Spectator.
 
-* Boss Announcer
+* VAS Autoblance.
 
-* Congrats on Level
+* AEO Loot.
 
-* Fireworks on Level
+* Better Item Reloading.
 
-* Money for Kills
+* Kill Streak LUA.
 
-* Player not Speak
+* Crossfaction Battleground.
 
-* Reward System
+* Ip Tracker.
+
+* Boss Announcer.
+
+* Congrats on Level.
+
+* Fireworks on Level.
+
+* Money for Kills.
+
+* Notify Mute.
+
+* Reward System.
