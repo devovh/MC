@@ -46,6 +46,8 @@
 
 * Arena Spectator.
 
+* Arena Anti-Draw.
+
 * VAS Autoblance.
 
 * AOE Loot.
