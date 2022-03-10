@@ -22,7 +22,9 @@
 
 * .npc add 190000 - Portal Master NPC.
 
-* .npc add 190017 - Multi Trainer Example NPC.
+* .npc add 190011 - Multi Trainer Alliance NPC.
+
+* .npc add 190012 - Multi Trainer Horde NPC.
 
 * .npc add 190018 - Multi Vendor Example NPC.
 
