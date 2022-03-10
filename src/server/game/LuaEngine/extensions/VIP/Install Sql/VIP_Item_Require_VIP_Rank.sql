@@ -1,2 +1,0 @@
-ALTER TABLE `item_template`
-	ADD COLUMN `vip` TINYINT(1) UNSIGNED NOT NULL DEFAULT '1' AFTER `VerifiedBuild`;
