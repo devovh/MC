@@ -34,6 +34,7 @@ void AddSC_GOMove_commandscript();
 void AddSC_premium_account();
 void AddSC_custom_reload_commands();
 void AddSC_AddBoss_AnnouncerScripts();
+void AddSC_Arena_AntiDraw();
 
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
@@ -57,4 +58,5 @@ void AddCustomScripts()
 	AddSC_premium_account();
     AddSC_custom_reload_commands();
     AddSC_AddBoss_AnnouncerScripts();
+	AddSC_Arena_AntiDraw();;
 }
