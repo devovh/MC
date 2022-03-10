@@ -381,7 +381,7 @@ extern int main(int argc, char** argv)
             triniChatThread->join();
             delete triniChatThread;
             }
-        
+                    // TO DO //
                     //if (raAcceptor != nullptr)
                         //delete raAcceptor;
 

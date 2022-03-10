@@ -5195,9 +5195,18 @@ irc.kickmsg = "Do Not Kick Me Again, Severe Actions Will Be Taken!"
 # Example:
 # irc.pass_1 = "password" password for irc channel #1
 # irc.pass_2 = "password2" password for irc channel #2
-irc.chan_1 = "ircchan"
+irc.chan_1 = "ircchan1"
+irc.chan_2 = "ircchan2"
+irc.chan_3 = "ircchan3"
+irc.chan_4 = "ircchan4"
+irc.chan_5 = "ircchan5"
+irc.chan_6 = "ircchan6"
+irc.chan_7 = "ircchan7"
+irc.chan_8 = "ircchan8"
+irc.chan_9 = "ircchan9"
 wow.chan_1 = "world"
 irc.pass_1 = "pass"
+Ticketmask = 0
 
 ##################################################
 # irc.staff_link
@@ -5339,16 +5348,5 @@ irc.gm5 = "[Game Master]"
 irc.gm6 = "[Admin]"
 irc.gm7 = "[Developer]"
 irc.gm8 = "[Owner]"
-
-#
-Ticketmask = 0
-irc.chan_2 =
-irc.chan_3 =
-irc.chan_4 =
-irc.chan_5 =
-irc.chan_6 =
-irc.chan_7 =
-irc.chan_8 =
-irc.chan_9 =
 #
 ###################################################################################################
