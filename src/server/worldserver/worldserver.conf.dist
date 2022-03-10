@@ -5075,8 +5075,8 @@ Boss.Announcer.RemoveAuraUponKill = 1
 #########################################################
 # irc.active
 # Enable TriniChat Addon
-# Default: 0 - Disabled
-# 1 - Enabled
+# Default: 0 - Disable
+# 1 - Enable
 #
 irc.active = 0
 
@@ -5112,7 +5112,15 @@ irc.port = 6667
 irc.user = "Trini_Chat"
 irc.nick = "Trini_Chat"
 irc.pass = "ServicesPass"
-
+irc.pass_1 = "ServicesPass"
+irc.pass_2 = "ServicesPass"
+irc.pass_3 = "ServicesPass"
+irc.pass_4 = "ServicesPass"
+irc.pass_5 = "ServicesPass"
+irc.pass_6 = "ServicesPass"
+irc.pass_7 = "ServicesPass"
+irc.pass_8 = "ServicesPass"
+irc.pass_9 = "ServicesPass"
 ##################################################
 # irc.auth
 # IRC Authentication Method
@@ -5195,6 +5203,7 @@ irc.kickmsg = "Do Not Kick Me Again, Severe Actions Will Be Taken!"
 # Example:
 # irc.pass_1 = "password" password for irc channel #1
 # irc.pass_2 = "password2" password for irc channel #2
+irc.chan = "ircchan"
 irc.chan_1 = "ircchan1"
 irc.chan_2 = "ircchan2"
 irc.chan_3 = "ircchan3"
@@ -5204,8 +5213,16 @@ irc.chan_6 = "ircchan6"
 irc.chan_7 = "ircchan7"
 irc.chan_8 = "ircchan8"
 irc.chan_9 = "ircchan9"
-wow.chan_1 = "world"
-irc.pass_1 = "pass"
+wow.chan = "world"
+wow.chan_1 = "world1"
+wow.chan_2 = "world2"
+wow.chan_3 = "world3"
+wow.chan_4 = "world4"
+wow.chan_5 = "world5"
+wow.chan_6 = "world6"
+wow.chan_7 = "world7"
+wow.chan_8 = "world8"
+wow.chan_9 = "world9"
 Ticketmask = 0
 
 ##################################################
