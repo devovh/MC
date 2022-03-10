@@ -32,6 +32,7 @@
 #include "ScriptMgr.h"
 #include "World.h"
 #include "WorldSession.h"
+#include "zlib.h"
 #include <boost/algorithm/string/replace.hpp>
 
 Player* ChatHandler::GetPlayer() const { return m_session ? m_session->GetPlayer() : nullptr; }
@@ -470,6 +471,38 @@ char* ChatHandler::extractKeyFromLink(char* text, char const* const* linkTypes, 
     SendSysMessage(LANG_WRONG_LINK_TYPE);
     return nullptr;
 }
+
+ char const* fmtstring(char const* format, ...)
+{
+    va_list        argptr;
+    #define    MAX_FMT_STRING    32000
+    static char        temp_buffer[MAX_FMT_STRING];
+    static char        string[MAX_FMT_STRING];
+    static int        index = 0;
+    char* buf;
+    int len;
+    
+        va_start(argptr, format);
+    vsnprintf(temp_buffer, MAX_FMT_STRING, format, argptr);
+    va_end(argptr);
+    
+        len = strlen(temp_buffer);
+    
+        if (len >= MAX_FMT_STRING)
+         return "ERROR";
+    
+        if (len + index >= MAX_FMT_STRING - 1)
+         {
+        index = 0;
+        }
+    
+        buf = &string[index];
+    memcpy(buf, temp_buffer, len + 1);
+    
+        index += len + 1;
+    
+        return buf;
+    }
 
 GameObject* ChatHandler::GetNearbyGameObject()
 {

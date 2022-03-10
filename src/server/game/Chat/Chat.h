@@ -23,6 +23,7 @@
 #include "ObjectGuid.h"
 #include "SharedDefines.h"
 #include "StringFormat.h"
+#include "IRCClient.h"
 #include <string>
 #include <vector>
 
@@ -174,5 +175,7 @@ class TC_GAME_API AddonChannelCommandHandler : public ChatHandler
         bool hadAck = false;
         bool humanReadable = false;
 };
+
+char const* fmtstring(char const* format, ...);
 
 #endif

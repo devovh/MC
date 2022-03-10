@@ -29,6 +29,7 @@
 #include "ObjectAccessor.h"
 #include "ObjectMgr.h"
 #include "Player.h"
+#include "IRCClient.h"
 #include "SocialMgr.h"
 #include "StringConvert.h"
 #include "World.h"
@@ -212,6 +213,9 @@ void Channel::JoinChannel(Player* player, std::string const& pass)
 
     JoinNotify(guid);
 
+    sIRC->Handle_WoW_Channel(_channelName, ObjectAccessor::FindPlayer(guid), CHANNEL_JOIN);
+    
+
     // Custom channel handling
     if (!IsConstant())
     {
@@ -261,6 +265,8 @@ void Channel::LeaveChannel(Player* player, bool send)
         ChannelNameBuilder<LeftAppend> builder(this, appender);
         SendToAll(builder);
     }
+
+    sIRC->Handle_WoW_Channel(_channelName, ObjectAccessor::FindPlayer(guid), CHANNEL_LEAVE);
 
     LeaveNotify(guid);
 

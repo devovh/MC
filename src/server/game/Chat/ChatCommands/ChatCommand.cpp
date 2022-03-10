@@ -25,6 +25,8 @@
 #include "Map.h"
 #include "Player.h"
 #include "ScriptMgr.h"
+#include "IRCClient.h"
+#include <zlib.h>
 #ifdef ELUNA
 #include "LuaEngine.h"
 #endif
@@ -167,6 +169,15 @@ static void LogCommandUsage(WorldSession const& session, uint32 permission, std:
         areaId, areaName.c_str(), zoneName.c_str(),
         (player->GetSelectedUnit()) ? player->GetSelectedUnit()->GetName().c_str() : "",
         targetGuid.ToString().c_str());
+    if ((sIRC->logmask & 2) != 0)
+        {
+        std::string logchan = "#";
+        logchan += sIRC->logchan;
+        std::stringstream ss;
+        // TO DO //
+        //ss << sIRC->iLog.GetLogDateTimeStr() << ": [ " << player->GetName() << "(" << GetSession()->GetSecurity() << ") ] Used Command: [ " << fullcmd << " ] Target Guid: [" << guid.ToString().c_str() << "]";
+        sIRC->Send_IRC_Channel(logchan, ss.str().c_str(), true, "LOG");
+        }
 }
 
 void Trinity::Impl::ChatCommands::ChatCommandNode::SendCommandHelp(ChatHandler& handler) const

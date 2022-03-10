@@ -52,6 +52,7 @@
 #include "World.h"
 #include "WorldSocket.h"
 #include "WorldSocketMgr.h"
+#include "IRCClient.h"
 #ifdef ELUNA
 #include "LuaEngine.h"
 #endif
@@ -60,6 +61,7 @@
 #include <boost/asio/signal_set.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <boost/program_options.hpp>
+//#include <boost/thread.hpp>
 #include <csignal>
 #include <iostream>
 
@@ -334,6 +336,15 @@ extern int main(int argc, char** argv)
         });
     }
 
+        // Start up TriniChat
+        std::thread * triniChatThread = nullptr;
+    if (sIRC->Active == 1)
+         {
+        triniChatThread = new std::thread(TrinityChatThread);
+        }
+     else
+    TC_LOG_ERROR("misc", "*** TriniChat Is Disabled. *");
+
     // Launch the worldserver listener socket
     uint16 worldPort = uint16(sWorld->getIntConfig(CONFIG_PORT_WORLD));
     std::string worldListener = sConfigMgr->GetStringDefault("BindIP", "0.0.0.0");
@@ -354,12 +365,25 @@ extern int main(int argc, char** argv)
         return 1;
     }
 
-    std::shared_ptr<void> sWorldSocketMgrHandle(nullptr, [](void*)
+    std::shared_ptr<void> sWorldSocketMgrHandle(nullptr, [&triniChatThread](void*)
     {
         sWorld->KickAll();              // save and kick all players
         sWorld->UpdateSessions(1);      // real players unload required UpdateSessions call
 
         sWorldSocketMgr.StopNetwork();
+
+                // Clean TrinityChat
+            if (triniChatThread != nullptr)
+             {
+                       // for some reason on win32 "sIRC->Active && !World::IsStopped()" fail to go false in time and the thread is stalled
+                           // so we make sure the condition to live will fail from here, since we are shutting down...
+            sIRC->Active = 0;
+            triniChatThread->join();
+            delete triniChatThread;
+            }
+        
+                    //if (raAcceptor != nullptr)
+                        //delete raAcceptor;
 
         ///- Clean database before leaving
         ClearOnlineAccounts();

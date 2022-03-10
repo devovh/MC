@@ -290,12 +290,12 @@ void Eluna::OnConfigLoad(bool reload)
 void Eluna::OnConfigLoad(bool reload, bool isBefore)
 #endif
 {
-    START_HOOK(WORLD_EVENT_ON_CONFIG_LOAD);
-    Push(reload);
+    //START_HOOK(WORLD_EVENT_ON_CONFIG_LOAD);
+    //Push(reload);
 #ifdef AZEROTHCORE
-    Push(isBefore);
+    //Push(isBefore);
 #endif
-    CallAllFunctions(ServerEventBindings, key);
+    //CallAllFunctions(ServerEventBindings, key);
 }
 
 void Eluna::OnShutdownInitiate(ShutdownExitCode code, ShutdownMask mask)

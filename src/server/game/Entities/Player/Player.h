@@ -1007,7 +1007,7 @@ class TC_GAME_API Player : public Unit, public GridObject<Player>
 	
     public:
         std::unique_ptr<CFBGData> cfbgdata;
-		
+        QuestStatusSaveMap m_RewardedQuestsSave2;
         explicit Player(WorldSession* session);
         ~Player();
 

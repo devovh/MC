@@ -24,6 +24,7 @@
 #include "DBCStructure.h"
 #include "GameTime.h"
 #include "Item.h"
+#include "IRCClient.h"
 #include "Language.h"
 #include "Log.h"
 #include "Mail.h"
@@ -638,7 +639,8 @@ void WorldSession::HandleAuctionRemoveItem(WorldPacket& recvData)
     SendAuctionCommandResult(auction->Id, AUCTION_CANCEL, ERR_AUCTION_OK);
 
     // Now remove the auction
-
+    uint32 item;
+    recvData >> item;
     player->SaveInventoryAndGoldToDB(trans);
     auction->DeleteFromDB(trans);
     CharacterDatabase.CommitTransaction(trans);

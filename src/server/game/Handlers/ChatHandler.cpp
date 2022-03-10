@@ -39,6 +39,7 @@
 #include "ScriptMgr.h"
 #include "SpellAuraEffects.h"
 #include "Util.h"
+#include "IRCClient.h"
 #ifdef ELUNA
 #include "LuaEngine.h"
 #endif

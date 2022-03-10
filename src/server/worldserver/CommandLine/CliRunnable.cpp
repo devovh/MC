@@ -24,6 +24,7 @@
 #include "ObjectMgr.h"
 #include "World.h"
 #include "Configuration/Config.h"
+#include "IRCClient.h"
 
 #include "CliRunnable.h"
 #include "Log.h"
@@ -92,6 +93,15 @@ void commandFinished(void*, bool /*success*/)
     PrintCliPrefix();
     fflush(stdout);
 }
+
+//Reconnect TriniChat to IRC server via CLI command
+bool HandleIRCRelogCommand(bool, const char* args)
+ {
+    TC_LOG_ERROR("misc" "TriniChat is dropping from IRC Server", "");
+    sIRC->ResetIRC();
+    TC_LOG_ERROR("misc" "TriniChat is reconnecting to IRC Server", "");
+    return true;
+    }
 
 #ifdef linux
 // Non-blocking keypress detector, when return pressed, return 1, else always return 0

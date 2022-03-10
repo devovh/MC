@@ -142,6 +142,12 @@ public:
             name = session->GetPlayer()->GetName();
 
         sWorld->SendGMText(LANG_GM_ANNOUNCE_COLOR, name.c_str(), message.data());
+            //send to irc
+            if (sIRC->_staffLink == 1)
+             {
+            std::string sMsg = "[<WoW>" + name + "]: ";
+            sIRC->Send_IRC_Channel(sIRC->_staffChan, sMsg, false, "PRIVMSG");
+            }
         return true;
     }
 
@@ -150,6 +156,13 @@ public:
     {
         if (message.empty())
             return false;
+
+        if ((sIRC->BOTMASK & 256) != 0 && sIRC->anchn.size() > 0)
+             {
+            std::string ircchan = "#";
+            ircchan += sIRC->anchn;
+            sIRC->Send_IRC_Channel(ircchan, sIRC->MakeMsg("\00304,08\037/!\\\037\017\00304 System Message \00304,08\037/!\\\037\017 %s", "%s", 0), true);
+            }
 
         sWorld->SendServerMessage(SERVER_MSG_STRING, Trinity::StringFormat(handler->GetTrinityString(LANG_SYSTEMMESSAGE), message.data()).c_str());
         return true;
