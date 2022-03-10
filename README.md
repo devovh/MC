@@ -48,7 +48,7 @@
 
 * VAS Autoblance.
 
-* AEO Loot.
+* AOE Loot.
 
 * Better Item Reloading.
 
