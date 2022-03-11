@@ -1607,10 +1607,10 @@ AllowTwoSide.Trade = 0
 #    Fake.WHO.List
 #        Add fake players to fill in WHO LIST.
 #        49 real players online.
-#        Default: 1 (enabled)
-#                 0 (disabled)
+#        Default: 0 (disabled)
+#                 1 (enabled)  
 
-Fake.WHO.List = 1
+Fake.WHO.List = 0
 
 #
 #    TalentsInspecting
