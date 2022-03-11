@@ -105,15 +105,15 @@ RealmsStateUpdateDelay = 20
 #        Default:     0  - (Disabled)
 #                     1+ - (Enabled)
 
-WrongPass.MaxCount = 0
+WrongPass.MaxCount = 3
 
 #
 #    WrongPass.BanTime
 #        Description: Time (in seconds) for banning account or IP for invalid login attempts.
-#        Default:     600 - (10 minutes)
+#        Default:     300 - (5 minutes)
 #                     0   - (Permanent ban)
 
-WrongPass.BanTime = 600
+WrongPass.BanTime = 300
 
 #
 #    WrongPass.BanType
@@ -121,7 +121,7 @@ WrongPass.BanTime = 600
 #        Default:     0 - (Ban IP)
 #                     1 - (Ban Account)
 
-WrongPass.BanType = 0
+WrongPass.BanType = 1
 
 #
 #    WrongPass.Logging
@@ -129,7 +129,7 @@ WrongPass.BanType = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-WrongPass.Logging = 0
+WrongPass.Logging = 1
 
 #
 #    StrictVersionCheck
@@ -199,12 +199,12 @@ AllowLoggingIPAddressesInDatabase = 1
 #                                                                 section my.ini)
 #                     ".;/path/to/unix_socket;username;password;database" - (use Unix sockets on
 #                                                                           Unix/Linux)
-#        Default:     "127.0.0.1;3306;trinity;trinity;auth"
+#        Default:     "127.0.0.1;3306;login;password;auth"
 #
 #    The SSL option will enable TLS when connecting to the specified database. If not provided or
 #    any value other than 'ssl' is set, TLS will not be used.
 
-LoginDatabaseInfo = "127.0.0.1;3306;trinity;trinity;auth"
+LoginDatabaseInfo = "127.0.0.1;3306;login;password;auth"
 
 #
 #    LoginDatabase.WorkerThreads
