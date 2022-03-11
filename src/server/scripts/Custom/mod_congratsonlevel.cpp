@@ -223,7 +223,7 @@ public:
             {
                 // Issue a server notification for the player on level up.
                 std::ostringstream ss;
-                ss << "|cffFFFFFF[ |cffFF0000C|cffFFA500O|cffFFFF00N|cff00FF00G|cff00FFFFR|cff6A5ACDA|cffFF00FFT|cff98FB98S|cffFF0000! |cffFFFFFF] : |cff4CFF00 " << player->GetName() << " |cffFFFFFF. You have reached |cff4CFF00Level " << std::to_string(player->GetLevel()) << "|cffFFFFFF!";
+                ss << "|cffFFFFFF[|cffFF0000C|cffFFA500O|cffFFFF00N|cff00FF00G|cff00FFFFR|cff6A5ACDA|cffFF00FFT|cff98FB98S|cffFF0000|cffFFFFFF]: |cff4CFF00" << player->GetName() << "|cffFFFFFF. You have reached |cff4CFF00Level " << std::to_string(player->GetLevel()) << "|cffFFFFFF !";
                 ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
                 break;
             }
@@ -236,7 +236,7 @@ public:
             {
                 // Issue a server notification for the player on level up.
                 std::ostringstream ss;
-                ss << "|cffFFFFFF[ |cffFF0000C|cffFFA500O|cffFFFF00N|cff00FF00G|cff00FFFFR|cff6A5ACDA|cffFF00FFT|cff98FB98S|cffFF0000! |cffFFFFFF] : |cff4CFF00 " << player->GetName() << " |cffFFFFFF. You have reached |cff4CFF00Level " << level << "|cffFFFFFF!";
+                ss << "|cffFFFFFF[|cffFF0000C|cffFFA500O|cffFFFF00N|cff00FF00G|cff00FFFFR|cff6A5ACDA|cffFF00FFT|cff98FB98S|cffFF0000|cffFFFFFF]: |cff4CFF00" << player->GetName() << "|cffFFFFFF. You have reached |cff4CFF00Level " << level << "|cffFFFFFF !";
                 ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
 
                 // Give the items to the player
