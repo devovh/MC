@@ -2311,7 +2311,7 @@ Rate.Drop.Money                 = 65
 #        Description: Multiplier for referenced loot amount.
 #        Default:     1
 
-Rate.Drop.Item.ReferencedAmount = 65
+Rate.Drop.Item.ReferencedAmount = 5
 
 #
 #    Rate.XP.Kill
