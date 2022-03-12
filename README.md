@@ -8,6 +8,8 @@
 
 * Based on TrinityCore 3.3.5a latest release, Updates are added every now and then.
 
+* This emulator is inspired by the designation for the High Rate Server range.
+
 # Add Custom in Game:
 
 # NPC:
