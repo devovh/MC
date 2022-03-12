@@ -46,6 +46,8 @@
 
 * GoMove.
 
+* Auto Learn Spells on Level Up.
+
 * Arena Spectator.
 
 * Arena Anti-Draw.
