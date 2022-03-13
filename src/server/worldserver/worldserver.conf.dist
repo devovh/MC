@@ -2018,8 +2018,8 @@ Channel.RestrictedLfg = 1
 #        Description: Level requirement for characters to be able to use chats.
 #        Default:     1
 
-ChatLevelReq.Channel = 20
-ChatLevelReq.Whisper = 20
+ChatLevelReq.Channel = 1
+ChatLevelReq.Whisper = 1
 ChatLevelReq.Emote = 1
 ChatLevelReq.Say = 1
 ChatLevelReq.Yell = 1
@@ -2042,7 +2042,7 @@ PartyLevelReq = 1
 #        Default:     0 - (Disabled, Blizzlike, Channel settings are lost if last person left)
 #                     1 - (Enabled)
 
-PreserveCustomChannels = 1
+PreserveCustomChannels = 0
 
 #
 #    PreserveCustomChannelInterval
