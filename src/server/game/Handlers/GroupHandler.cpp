@@ -34,6 +34,7 @@
 #include "World.h"
 #include "WorldPacket.h"
 #include "Language.h"
+#include "Battleground.h"
 
 class Aura;
 
@@ -703,6 +704,9 @@ void WorldSession::HandleRaidReadyCheckOpcode(WorldPacket& recvData)
 
     if (recvData.empty())                                   // request
     {
+        if (this->GetPlayer()->InArena())
+            return;
+		
         /** error handling **/
         if (!group->IsLeader(GetPlayer()->GetGUID()) && !group->IsAssistant(GetPlayer()->GetGUID()))
             return;
@@ -719,6 +723,14 @@ void WorldSession::HandleRaidReadyCheckOpcode(WorldPacket& recvData)
     {
         uint8 state;
         recvData >> state;
+
+        if (this->GetPlayer()->InArena() && state)
+        {
+            this->GetPlayer()->GetBattleground()->m_ArenaReadyCheckMap.insert(this->GetPlayer()->GetGUID());
+
+            if (this->GetPlayer()->GetBattleground()->GetPlayersSize() == this->GetPlayer()->GetBattleground()->m_ArenaReadyCheckMap.size())
+                this->GetPlayer()->GetBattleground()->SetStartDelayTime(BG_START_DELAY_NONE);
+        }
 
         // everything's fine, do it
         WorldPacket data(MSG_RAID_READY_CHECK_CONFIRM, 9);

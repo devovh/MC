@@ -263,7 +263,7 @@ class TC_GAME_API Battleground
         virtual bool IsAllNodesControlledByTeam(uint32 /*team*/) const { return false; }
         void StartTimedAchievement(AchievementCriteriaTimedTypes type, uint32 entry);
         virtual bool CheckAchievementCriteriaMeet(uint32 /*criteriaId*/, Player const* /*player*/, Unit const* /*target*/ = nullptr, uint32 /*miscvalue1*/ = 0);
-
+        
         /* Battleground */
         // Get methods:
         std::string const& GetName() const  { return m_Name; }
@@ -499,6 +499,9 @@ class TC_GAME_API Battleground
         uint32 GetTeamScore(uint32 TeamID) const;
 
         virtual uint32 GetPrematureWinner();
+		
+        std::set<uint64> m_ArenaReadyCheckMap;
+        void SendArenaReadyCheck() const;
 
         // because BattleGrounds with different types and same level range has different m_BracketId
         uint8 GetUniqueBracketId() const;
