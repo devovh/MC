@@ -299,7 +299,7 @@ public:
         }
         else if (KillType == "PVP")
         {
-            ss << "|cff676767[ |cffFFFF00World |cff676767]|r:|cff4CFF00 " << player->GetName() << " |cffFF0000has slain " << victim->GetName() << " earning a bounty of ";
+            ss << "|cff676767[|cffFFFF00World|cff676767]|r:|cff4CFF00 " << player->GetName() << " |cffFF0000has slain " << victim->GetName() << " earning a bounty of ";
         }
         else
         {
@@ -361,7 +361,7 @@ public:
         {
             // Inform the world of the kill
             std::ostringstream sw;
-            sw << "|cffFF0000[ |cffFFFF00World |cffFF0000]|r:|cff4CFF00 " << player->GetName() << "'s|r group triumphed victoriously over |CFF18BE00[" << killed->GetName() << "]|r !";
+            sw << "|cffFF0000[|cffFFFF00World|cffFF0000]|r:|cff4CFF00 " << player->GetName() << "'s|r group triumphed victoriously over |CFF18BE00[" << killed->GetName() << "]|r !";
             sWorld->SendServerMessage(SERVER_MSG_STRING, sw.str().c_str());
 
             // Inform the player of the bounty
