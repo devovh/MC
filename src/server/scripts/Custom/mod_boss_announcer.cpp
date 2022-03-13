@@ -97,13 +97,13 @@ public:
                         // if we are in group lets get guild of the leader
                         if (player->GetGroup() && itr->GetSource()->GetGroup()->IsLeader(itr->GetSource()->GetGUID())) {
                             if (!itr->GetSource()->GetGuild()) {
-                                g_name = "< No Guild >";
+                                g_name = "<No Guild>";
                             } else {
                                 g_name = itr->GetSource()->GetGuildName();
                             }
                         }
 
-                        g_name = "< No Guild >";
+                        g_name = "<No Guild>";
                     }
                     else
                         g_name = player->GetGuildName();

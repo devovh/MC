@@ -110,7 +110,7 @@ public:
                 {
                     // Inform the world
                     std::ostringstream ss;
-                    ss << "|cff676767[ |cffFFFF00World |cff676767]|r:|cff4CFF00 " << player->GetName() << " met an untimely demise!";
+                    ss << "|cff676767[|cffFFFF00World|cff676767]|r:|cff4CFF00 " << player->GetName() << " met an untimely demise!";
                     sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
 
                     return;
