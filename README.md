@@ -18,7 +18,9 @@
 
 * .npc add 190014 - Beast Master NPC.
 
-* .npc add 190015 , .npc add 190016 - Buff NPC.
+* .npc add 190015 - Buff NPC(Alliance Model) 
+
+* .npc add 190016 - Buff NPC(Horde Model).
 
 * .npc add 190002 - Gambler NPC.
 
@@ -28,7 +30,7 @@
 
 * .npc add 190012 - Multi Trainer Horde NPC.
 
-* .npc add 190018 - Multi Vendor Example NPC.
+* .npc add 190018 - Multi Vendor Miscellaneous NPC.
 
 * .npc add 190010 - Transmogrifier NPC.
 
@@ -53,6 +55,8 @@
 * Arena Spectator.
 
 * Arena Anti-Draw.
+
+* Arena Ready Check(Information Table)
 
 * VAS Autoblance.
 
