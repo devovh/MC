@@ -13,4 +13,7 @@ INSERT INTO `gossip_menu_option` (`menuid`, `optionid`, `optionicon`, `optiontex
 (@MENU_ID, 6, 3, 'Shaman Trainer', 5, 16, 3344, 0, 0, 0, ''),
 (@MENU_ID, 7, 3, 'Warlock Trainer', 5, 16, 3324, 0, 0, 0, ''),
 (@MENU_ID, 8, 3, 'Warrior Trainer', 5, 16, 3353, 0, 0, 0, ''),
-(@MENU_ID, 9, 3, 'Death Knight Trainer', 5, 16, 28474, 0, 0, 0, '');
+(@MENU_ID, 9, 3, 'Death Knight Trainer', 5, 16, 28474, 0, 0, 0, ''),
+(@MENU_ID, 10, 3, 'Gun,Mace,Staff Trainer', 5, 16, 11869, 0, 0, 0, ''),
+(@MENU_ID, 11, 3, 'Axe,Bow,Dagger,Fist-Weapon,Thrown Trainer', 5, 16, 11868, 0, 0, 0, ''),
+(@MENU_ID, 12, 3, 'Crossbow,Polearm,Sword Trainer', 5, 16, 11870, 0, 0, 0, '');
