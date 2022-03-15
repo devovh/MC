@@ -154,7 +154,7 @@ public:
 		float x, y, z;
 		target->GetContactPoint(player, x, y, z);
 
-		player->TeleportTo(target->GetMapId(), x, y, z, player->GetRelativeAngle(target), TELE_TO_GM_MODE);
+		player->TeleportTo(target->GetMapId(), x, y, z, player->GetAbsoluteAngle(target), TELE_TO_GM_MODE);
 		player->SetPhaseMask(target->GetPhaseMask(), true);
 		player->SetSpectate(true);
 		target->GetBattleground()->AddSpectator(player->GetGUID());
