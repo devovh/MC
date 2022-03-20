@@ -1,6 +1,4 @@
-/**
-* Table structure for irc_commands
-*/
+--
 DROP TABLE IF EXISTS `irc_commands`;
 CREATE TABLE `irc_commands` (
   `Command` varchar(10) NOT NULL default '',
@@ -9,9 +7,6 @@ CREATE TABLE `irc_commands` (
   PRIMARY KEY  (`Command`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='IRC Module System';
 
-/**
-* Records
-*/
 INSERT INTO `irc_commands` VALUES ('acct', '[acct <Player> <(un)lock/email/pass/rename/gmlevel>] : Perform Action To <Player> Account.', '3');
 INSERT INTO `irc_commands` VALUES ('ban', '[ban <Player/IP> <ip/acct/unban/reason>] : Ban/Unban <Player>', '3');
 INSERT INTO `irc_commands` VALUES ('chan', '[chan <op/deop/voice/devoice> <*IRC Nick*>] : Set Mode On Yourself, If <IRC Nick> Is Specified Then Set mode On Nick.', '3');
@@ -44,9 +39,7 @@ INSERT INTO `irc_commands` VALUES ('tele', '[tele <Player> <l/c/r/to/cr/go/homeb
 INSERT INTO `irc_commands` VALUES ('top', '[top <accttime/chartime/money> <limit>] : Display top stats for given option. Only GM Higher Than Config Option Can Use Limit.', '3');
 INSERT INTO `irc_commands` VALUES ('who', '[who] : Displays Users Currently Logged In To TriniChat.', '1');
 
-/**
-* Table structure for irc_inchan
-*/
+--
 DROP TABLE IF EXISTS `irc_inchan`;
 CREATE TABLE `irc_inchan` (
   `guid` int(11) unsigned NOT NULL default '0' COMMENT 'Global Unique Identifier',
@@ -55,13 +48,7 @@ CREATE TABLE `irc_inchan` (
   PRIMARY KEY  (`guid`,`channel`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='IRC Module System';
 
-/**
-* Records
-*/
-
-/**
-* Table structure for irc_autoannounce
-*/
+--
 DROP TABLE IF EXISTS `irc_autoannounce`;
 CREATE TABLE `irc_autoannounce` (
   `id` int(11) NOT NULL auto_increment,
@@ -70,9 +57,7 @@ CREATE TABLE `irc_autoannounce` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='IRC Module System';
 
-/**
-* Records
-*/
+--
 INSERT INTO `irc_autoannounce` VALUES ('1', 'Welcome to IRC Channel', '');
 
 DELETE FROM `trinity_string` WHERE entry IN (6610,6611,6612);

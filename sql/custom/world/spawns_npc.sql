@@ -1,3 +1,4 @@
+--
 INSERT INTO `creature`(`guid`,`id`,`map`,`zoneId`,`areaId`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`wander_distance`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`,`ScriptName`,`VerifiedBuild`) VALUES
 (213818,190000,0,0,0,1,1,0,0,-13180.5,342.503,43.1936,4.32977,25,0,0,13700,6540,0,0,0,0,'',0),
 (213819,190000,530,0,0,1,1,0,0,-3862.69,-11645.8,-137.629,2.38273,25,0,0,13700,6540,0,0,0,0,'',0),

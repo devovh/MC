@@ -1,3 +1,4 @@
+--
 INSERT INTO `playercreateinfo_item`(`race`,`class`,`itemid`,`amount`) VALUES 
 (1,1,3914,4),
 (1,2,3914,4),
@@ -61,3 +62,4 @@ INSERT INTO `playercreateinfo_item`(`race`,`class`,`itemid`,`amount`) VALUES
 (11,6,3914,4),
 (11,7,3914,4),
 (11,8,3914,4);
+

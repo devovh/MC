@@ -1,10 +1,4 @@
-/*
-TrinityCore Portal Master
-By Rochet2
-Downloaded from http://rochet2.github.io/
-Bugs and contact with E-mail: Rochet2@post.com
-*/
-
+--
 SET
 @ENTRY          := 190000,
 @NAME           := "Ebon Trans Specialist",
@@ -554,9 +548,4 @@ INSERT INTO gameobject (id, map, spawnMask, phaseMask, position_x, position_y, p
 (@RUNE, 0, 1, 1, -13181.8, 339.356, 42.9805, 1.18013, 0.556415, 0.830904, 25, 1), 
 (@RUNE, 1, 1, 1, -1274.45, 71.8601, 128.159, 2.80623, 0.985974, 0.166898, 25, 1);
 
-/*
-TrinityCore Portal Master
-By Rochet2
-Downloaded from http://rochet2.github.io/
-Bugs and contact with E-mail: Rochet2@post.com
-*/
+--
