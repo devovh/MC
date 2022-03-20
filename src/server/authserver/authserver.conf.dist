@@ -88,7 +88,7 @@ UseProcessors = 0
 #        Default:     0 - (Normal)
 #                     1 - (High)
 
-ProcessPriority = 0
+ProcessPriority = 1
 
 #
 #    RealmsStateUpdateDelay
