@@ -1531,7 +1531,7 @@ Warden.ClientCheckHoldOff = 30
 #                     1 - (Kick)
 #                     2 - (Ban)
 
-Warden.ClientCheckFailAction = 1
+Warden.ClientCheckFailAction = 2
 
 #
 #    Warden.BanDuration
@@ -3327,7 +3327,7 @@ Anticheat.ReportsForIngameWarnings = 70
 #
 #        Default:     31
 
-Anticheat.DetectionsEnabled = 32
+Anticheat.DetectionsEnabled = 31
 
 #     Anticheat.MaxReportsForDailyReport
 #        Description: How many reports must the player have to make a report that it is in DB for a day (not only during the player's session).
@@ -4375,7 +4375,7 @@ Transmogrification.SetCopperCost = 10000000
 #        Default:     0    - (Disabled)
 #                     3000 - (3 seconds, Recommended)
 
-AntiCheat.PendingMoveChangesTimeoutTime = 0
+AntiCheat.PendingMoveChangesTimeoutTime = 3
 
 #
 ###################################################################################################
