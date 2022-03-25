@@ -14,6 +14,8 @@
 
 # NPC:
 
+* .npc add 190112 - Arena Spectator NPC.
+
 * .npc add 55003 - Weapon NPC Ilussion Enchant.
 
 * .npc add 190014 - Beast Master NPC.
