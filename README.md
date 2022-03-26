@@ -10,6 +10,8 @@
 
 * This emulator is inspired by the designation for the High Rate Server range.
 
+* Linux - Install ACE 6.1.4 (libace). Windows - in source (acelite).
+
 # Add Custom in Game:
 
 # NPC:
