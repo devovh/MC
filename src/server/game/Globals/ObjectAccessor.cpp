@@ -30,6 +30,43 @@
 #include "Transport.h"
 #include "World.h"
 
+//#include <boost/thread/shared_mutex.hpp>
+//#include <boost/thread/locks.hpp>
+
+ObjectAccessor::ObjectAccessor() { }
+ObjectAccessor::~ObjectAccessor() { }
+
+/*template<class T> T* ObjectAccessor::GetObjectInWorld(uint32 mapid, float x, float y, ObjectGuid guid, T*)
+{
+    T* obj = HashMapHolder<T>::Find(guid);
+    if (!obj || obj->GetMapId() != mapid)
+        return NULL;
+    CellCoord p = Trinity::ComputeCellCoord(x, y);
+    if (!p.IsCoordValid())
+    {
+        TC_LOG_ERROR("misc", "ObjectAccessor::GetObjectInWorld: invalid coordinates supplied X:%f Y:%f grid cell [%u:%u]", x, y, p.x_coord, p.y_coord);
+        return NULL;
+    }
+    CellCoord q = Trinity::ComputeCellCoord(obj->GetPositionX(), obj->GetPositionY());
+    if (!q.IsCoordValid())
+    {
+        TC_LOG_ERROR("misc", "ObjectAccessor::GetObjecInWorld: object (GUID: %u TypeId: %u) has invalid coordinates X:%f Y:%f grid cell [%u:%u]", obj->GetGuidLow(), obj->GetTypeId(), obj->GetPositionX(), obj->GetPositionY(), q.x_coord, q.y_coord);
+        return NULL;
+    }
+    int32 dx = int32(p.x_coord) - int32(q.x_coord);
+    int32 dy = int32(p.y_coord) - int32(q.y_coord);
+    if (dx > -2 && dx < 2 && dy > -2 && dy < 2)
+        return obj;
+    else
+        return NULL;
+}
+
+Player* ObjectAccessor::GetObjectInWorld(ObjectGuid guid, Player* /*typeSpecifier*)
+{
+    Player* player = HashMapHolder<Player>::Find(guid);
+    return player && player->IsInWorld() ? player : NULL;
+}*/
+
 template<class T>
 void HashMapHolder<T>::Insert(T* o)
 {
@@ -73,14 +110,8 @@ std::shared_mutex* HashMapHolder<T>::GetLock()
     return &_lock;
 }
 
-HashMapHolder<Player>::MapType const& ObjectAccessor::GetPlayers()
-{
-    return HashMapHolder<Player>::GetContainer();
-}
-
 template class TC_GAME_API HashMapHolder<Player>;
 template class TC_GAME_API HashMapHolder<Transport>;
-
 namespace PlayerNameMapHolder
 {
     typedef std::unordered_map<std::string, Player*> MapType;
@@ -107,6 +138,11 @@ namespace PlayerNameMapHolder
     }
 } // namespace PlayerNameMapHolder
 
+HashMapHolder<Player>::MapType const& ObjectAccessor::GetPlayers()
+{
+    return HashMapHolder<Player>::GetContainer();
+}
+
 WorldObject* ObjectAccessor::GetWorldObject(WorldObject const& p, ObjectGuid const& guid)
 {
     switch (guid.GetHigh())
@@ -122,6 +158,19 @@ WorldObject* ObjectAccessor::GetWorldObject(WorldObject const& p, ObjectGuid con
         case HighGuid::Corpse:        return GetCorpse(p, guid);
         default:                     return nullptr;
     }
+}
+
+Pet* ObjectAccessor::FindPet(ObjectGuid guid)
+{
+    return GetObjectInWorld(guid, (Pet*)NULL);
+}
+/*Player* ObjectAccessor::FindPlayer(ObjectGuid const& guid)
+{
+    return GetObjectInWorld(guid, (Player*)NULL);
+}*/
+Unit* ObjectAccessor::FindUnit(ObjectGuid guid)
+{
+    return GetObjectInWorld(guid, (Unit*)NULL);
 }
 
 Object* ObjectAccessor::GetObjectByTypeMask(WorldObject const& p, ObjectGuid const& guid, uint32 typemask)
@@ -237,6 +286,32 @@ Player* ObjectAccessor::FindPlayer(ObjectGuid const& guid)
 {
     Player* player = HashMapHolder<Player>::Find(guid);
     return player && player->IsInWorld() ? player : nullptr;
+    //return GetObjectInWorld(guid, (Player*)NULL);
+}
+
+/*Player* ObjectAccessor::FindPlayerByName(std::string_view name)
+{
+    std::shared_lock<std::shared_mutex> lock(*HashMapHolder<Player>::GetLock());
+    std::string_view nameStr = name;
+    std::transform(nameStr.begin(), nameStr.end(), nameStr.begin(), ::tolower);
+    HashMapHolder<Player>::MapType const& m = GetPlayers();
+    for (HashMapHolder<Player>::MapType::const_iterator iter = m.begin(); iter != m.end(); ++iter)
+    {
+        if (!iter->second->IsInWorld())
+            continue;
+        std::string currentName = iter->second->GetName();
+        std::transform(currentName.begin(), currentName.end(), currentName.begin(), ::tolower);
+        if (nameStr.compare(currentName) == 0)
+            return iter->second;
+    }
+
+    return NULL;
+}*/
+
+Player* ObjectAccessor::GetObjectInWorld(ObjectGuid guid, Player* /*typeSpecifier*/)
+{
+    Player* player = HashMapHolder<Player>::Find(guid);
+    return player && player->IsInWorld() ? player : NULL;
 }
 
 Player* ObjectAccessor::FindPlayerByName(std::string_view name)

@@ -242,4 +242,8 @@ if(DISABLED_SCRIPT_MODULE_PROJECTS)
   ")
 endif()
 
+include_directories(
+${ACE_INCLUDE_DIR}
+)
+
 message("")

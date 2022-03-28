@@ -347,12 +347,12 @@ else()
 
   target_link_libraries(ace
     PRIVATE
-      acore-dependency-interface Iphlpapi)
+      trinity-dependency-interface Iphlpapi)
       
   set_target_properties(ace
     PROPERTIES
       FOLDER
-        "deps")
+        "dep")
 
   # Generate precompiled header
   if(USE_COREPCH)

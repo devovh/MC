@@ -74,6 +74,8 @@ include(AutoCollect)
 
 find_package(PCHSupport)
 find_package(MySQL)
+find_package(ACE)
+
 
 if(NOT WITHOUT_GIT)
   find_package(Git 1.7)

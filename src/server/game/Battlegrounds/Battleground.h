@@ -205,6 +205,8 @@ enum ArenaType
     ARENA_TYPE_5v5          = 5
 };
 
+#define BG_TEAMS_COUNT  2
+
 enum BattlegroundStartingEvents
 {
     BG_STARTING_EVENT_NONE  = 0x00,
@@ -427,6 +429,7 @@ class TC_GAME_API Battleground
         uint32 GetArenaTeamIdByIndex(uint32 index) const { return m_ArenaTeamIds[index]; }
         void SetArenaMatchmakerRating(uint32 Team, uint32 MMR){ m_ArenaTeamMMR[GetTeamIndexByTeamId(Team)] = MMR; }
         uint32 GetArenaMatchmakerRating(uint32 Team) const          { return m_ArenaTeamMMR[GetTeamIndexByTeamId(Team)]; }
+        uint32 GetArenaMatchmakerRatingByIndex(uint32 index) const { return m_ArenaTeamMMR[index]; }
 
         // Triggers handle
         // must be implemented in BG subclass

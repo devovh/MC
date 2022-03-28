@@ -187,7 +187,7 @@ public:
         float x, y, z;
         target->GetContactPoint(player, x, y, z);
 
-        player->TeleportTo(target->GetMapId(), x, y, z, player->GetAbsoluteAngle(target), TELE_TO_GM_MODE);
+        player->TeleportTo(target->GetMapId(), x, y, z, player->GetRelativeAngle(target), TELE_TO_GM_MODE);
         player->SetPhaseMask(target->GetPhaseMask(), true);
         player->SetSpectate(true);
         target->GetBattleground()->AddSpectator(player->GetGUID());
@@ -376,14 +376,14 @@ public:
         AddGossipItemFor(pPlayer, GOSSIP_ICON_CHAT, "|TInterface\\icons\\Achievement_Arena_2v2_7:35:35:-30:0|tGames: 2v2", GOSSIP_SENDER_MAIN, NPC_SPECTATOR_ACTION_2V2_GAMES);
         AddGossipItemFor(pPlayer, GOSSIP_ICON_CHAT, "|TInterface\\icons\\Achievement_Arena_3v3_7:35:35:-30:0|tGames: 3v3", GOSSIP_SENDER_MAIN, NPC_SPECTATOR_ACTION_3V3_GAMES);
         AddGossipItemFor(pPlayer, GOSSIP_ICON_CHAT, "|TInterface\\icons\\Spell_Holy_DevineAegis:35:35:-30:0|tSpectate Specific Player.", GOSSIP_SENDER_MAIN, NPC_SPECTATOR_ACTION_SPECIFIC, "", 0, true);
-        SendGossipMenuFor(pPlayer, 1, me);
+        SendGossipMenuFor(pPlayer, 190112, me->GetGUID());
         return true;
     }
 
     bool OnGossipSelect(Player* player, uint32 /*sender*/, uint32 action)
     {
         player->PlayerTalkClass->ClearMenus();
-        if (action == NPC_SPECTATOR_ACTION_SPECIFIC)
+        if (action = NPC_SPECTATOR_ACTION_SPECIFIC)
         {
 
         }
@@ -391,13 +391,13 @@ public:
         {
             AddGossipItemFor(player, GOSSIP_ICON_DOT, "Refresh", GOSSIP_SENDER_MAIN, NPC_SPECTATOR_ACTION_2V2_GAMES);
             ShowPage(player, action - NPC_SPECTATOR_ACTION_2V2_GAMES, false);
-            SendGossipMenuFor(player, 1, me);
+            SendGossipMenuFor(player, 1, me->GetGUID());
         }
         else if (action = NPC_SPECTATOR_ACTION_3V3_GAMES)
         {
             AddGossipItemFor(player, GOSSIP_ICON_DOT, "Refresh", GOSSIP_SENDER_MAIN, NPC_SPECTATOR_ACTION_3V3_GAMES);
             ShowPage(player, action - NPC_SPECTATOR_ACTION_3V3_GAMES, true);
-            SendGossipMenuFor(player, 1, me);
+            SendGossipMenuFor(player, 2, me->GetGUID());
         }
         else
         {
@@ -434,7 +434,7 @@ public:
 
     std::string GetGamesStringData(Battleground* team, uint16 mmr, uint16 mmrTwo)
     {
-        std::string teamsMember[COUNT_OF_PLAYERS_TO_AVERAGE_WAIT_TIME];
+        std::string teamsMember[BG_TEAMS_COUNT];
         uint32 firstTeamId = 0;
         for (Battleground::BattlegroundPlayerMap::const_iterator itr = team->GetPlayers().begin(); itr != team->GetPlayers().end(); ++itr)
             if (Player* player = ObjectAccessor::FindPlayer(itr->first))
@@ -508,22 +508,22 @@ public:
 
                 if (arena->GetArenaType() == ARENA_TYPE_2v2)
                 {
-					mmr = arena->GetArenaMatchmakerRating(0);
-                    firstTeamId = target->GetArenaTeamId(0);
+					mmr = arena->GetArenaMatchmakerRatingByIndex(1);
+                    firstTeamId = target->GetArenaTeamId(1);
                     Battleground::BattlegroundPlayerMap::const_iterator citr = arena->GetPlayers().begin();
                     for (; citr != arena->GetPlayers().end(); ++citr)
-                        if (Player* plrs = ObjectAccessor::FindPlayer(citr->first))
-                            if (plrs->GetArenaTeamId(0) != firstTeamId)
+                        if (Player* plrs = sObjectAccessor->FindPlayer(citr->first))
+                            if (plrs->GetArenaTeamId(1) != firstTeamId)
                                 mmrTwo = arena->GetArenaMatchmakerRating(citr->second.Team);
                 }
                 else
                 {
-					mmr = arena->GetArenaMatchmakerRating(1);
-                    firstTeamId = target->GetArenaTeamId(1);
+					mmr = arena->GetArenaMatchmakerRatingByIndex(2);
+                    firstTeamId = target->GetArenaTeamId(2);
                     Battleground::BattlegroundPlayerMap::const_iterator citr = arena->GetPlayers().begin();
                     for (; citr != arena->GetPlayers().end(); ++citr)
-                        if (Player* plrs = ObjectAccessor::FindPlayer(citr->first))
-                            if (plrs->GetArenaTeamId(1) != firstTeamId)
+                        if (Player* plrs = sObjectAccessor->FindPlayer(citr->first))
+                            if (plrs->GetArenaTeamId(2) != firstTeamId)
                                 mmrTwo = arena->GetArenaMatchmakerRating(citr->second.Team);
                 }
 
@@ -569,11 +569,11 @@ public:
 
     bool OnGossipSelectCode(Player* player, uint32 sender, uint32 action, const char* code)
     {
-        if (!player)
-            return true;
+        //if (!player)
+            //return true;
 
-        player->PlayerTalkClass->ClearMenus();
-        CloseGossipMenuFor(player);
+        //player->PlayerTalkClass->ClearMenus();
+        //CloseGossipMenuFor(player);
         if (sender == GOSSIP_SENDER_MAIN)
         {
             switch (action)
@@ -595,7 +595,7 @@ public:
                         playerName[i] += 32;
                 }
 
-                if (Player* target = ObjectAccessor::FindPlayerByName(playerName))
+                if (Player* target = sObjectAccessor->FindPlayerByName(playerName))
                 {
                     ChatHandler handler(player->GetSession());
                     char const* pTarget = target->GetName().c_str();
