@@ -4375,7 +4375,7 @@ Transmogrification.SetCopperCost = 10000000
 #        Default:     0    - (Disabled)
 #                     3000 - (3 seconds, Recommended)
 
-AntiCheat.PendingMoveChangesTimeoutTime = 3
+AntiCheat.PendingMoveChangesTimeoutTime = 0
 
 #
 ###################################################################################################
