@@ -1229,7 +1229,7 @@ Motd = "Welcome to a MCore server. Global Chat - /join world"
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Server.LoginInfo = 0
+Server.LoginInfo = 1
 
 #
 #    Command.LookupMaxResults
@@ -2018,8 +2018,8 @@ Channel.RestrictedLfg = 0
 #        Description: Level requirement for characters to be able to use chats.
 #        Default:     1
 
-ChatLevelReq.Channel = 1
-ChatLevelReq.Whisper = 1
+ChatLevelReq.Channel = 20
+ChatLevelReq.Whisper = 20
 ChatLevelReq.Emote = 1
 ChatLevelReq.Say = 1
 ChatLevelReq.Yell = 1
