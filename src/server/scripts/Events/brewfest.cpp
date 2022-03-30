@@ -414,6 +414,170 @@ class spell_brewfest_mount_transformation : public SpellScript
     }
 };
 
+/*
+    Brew of the Month
+ January   [Wild Winter Pilsner]
+ February  [Izzard's Ever Flavor]
+ March     [Aromatic Honey Brew]
+ April     [Metok's Bubble Bock]
+    spell_brewfest_botm_bloated
+    Incomplete (spells 49828, 49827, 49830, 49837)
+ May       [Springtime Stout]
+    Nothing to script here
+ June      [Blackrock Lager]
+    spell_brewfest_botm_internal_combustion
+ July      [Stranglethorn Brew]
+ August    [Draenic Pale Ale]
+ September [Binary Brew]
+    spell_brewfest_botm_teach_language
+ October   [Autumnal Acorn Ale]
+ November  [Bartlett's Bitter Brew]
+ December  [Lord of Frost's Private Label]
+    Nothing to script here
+*/
+
+enum MetoksBubbleBock
+{
+    SPELL_BOTM_BUBBLE_BREW_TRIGGER_MISSILE    = 50072
+};
+
+// 49822 - Bloated
+class spell_brewfest_botm_bloated : public AuraScript
+{
+    PrepareAuraScript(spell_brewfest_botm_bloated);
+
+    bool Validate(SpellInfo const* /*spellInfo*/) override
+    {
+        return ValidateSpellInfo({ SPELL_BOTM_BUBBLE_BREW_TRIGGER_MISSILE });
+    }
+
+    void AfterRemove(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
+    {
+        GetTarget()->CastSpell(GetTarget(), SPELL_BOTM_BUBBLE_BREW_TRIGGER_MISSILE, true);
+    }
+
+    void Register() override
+    {
+        AfterEffectRemove += AuraEffectRemoveFn(spell_brewfest_botm_bloated::AfterRemove, EFFECT_0, SPELL_AURA_DUMMY, AURA_EFFECT_HANDLE_REAL);
+    }
+};
+
+enum BlackrockLager
+{
+    SPELL_BOTM_BELCH_FIRE_VISUAL    = 49737
+};
+
+// 49738 - Internal Combustion
+class spell_brewfest_botm_internal_combustion : public AuraScript
+{
+    PrepareAuraScript(spell_brewfest_botm_internal_combustion);
+
+    bool Validate(SpellInfo const* /*spellInfo*/) override
+    {
+        return ValidateSpellInfo({ SPELL_BOTM_BELCH_FIRE_VISUAL });
+    }
+
+    void AfterRemove(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
+    {
+        GetTarget()->CastSpell(GetTarget(), SPELL_BOTM_BELCH_FIRE_VISUAL, true);
+    }
+
+    void Register() override
+    {
+        AfterEffectRemove += AuraEffectRemoveFn(spell_brewfest_botm_internal_combustion::AfterRemove, EFFECT_0, SPELL_AURA_DUMMY, AURA_EFFECT_HANDLE_REAL);
+    }
+};
+
+enum BinaryBrew
+{
+    SPELL_LEARN_GNOMISH_BINARY      = 50242,
+    SPELL_LEARN_GOBLIN_BINARY       = 50246
+};
+
+// 50243 - Teach Language
+class spell_brewfest_botm_teach_language : public SpellScript
+{
+    PrepareSpellScript(spell_brewfest_botm_teach_language);
+
+    bool Validate(SpellInfo const* /*spellInfo*/) override
+    {
+        return ValidateSpellInfo({ SPELL_LEARN_GNOMISH_BINARY, SPELL_LEARN_GOBLIN_BINARY });
+    }
+
+    void HandleDummy(SpellEffIndex /*effIndex*/)
+    {
+        if (Player* caster = GetCaster()->ToPlayer())
+            caster->CastSpell(caster, caster->GetTeam() == ALLIANCE ? SPELL_LEARN_GNOMISH_BINARY : SPELL_LEARN_GOBLIN_BINARY, true);
+    }
+
+    void Register() override
+    {
+        OnEffectHit += SpellEffectFn(spell_brewfest_botm_teach_language::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+    }
+};
+
+enum CreateEmptyBrewBottle
+{
+    SPELL_BOTM_CREATE_EMPTY_BREW_BOTTLE    = 51655
+};
+
+// 42254, 42255, 42256, 42257, 42258, 42259, 42260, 42261, 42263, 42264, 43959, 43961 - Weak Alcohol
+class spell_brewfest_botm_weak_alcohol : public SpellScript
+{
+    PrepareSpellScript(spell_brewfest_botm_weak_alcohol);
+
+    bool Validate(SpellInfo const* /*spellInfo*/) override
+    {
+        return ValidateSpellInfo({ SPELL_BOTM_CREATE_EMPTY_BREW_BOTTLE });
+    }
+
+    void HandleAfterCast()
+    {
+        GetCaster()->CastSpell(GetCaster(), SPELL_BOTM_CREATE_EMPTY_BREW_BOTTLE, true);
+    }
+
+    void Register() override
+    {
+        AfterCast += SpellCastFn(spell_brewfest_botm_weak_alcohol::HandleAfterCast);
+    }
+};
+
+enum EmptyBottleThrow
+{
+    SPELL_BOTM_EMPTY_BOTTLE_THROW_IMPACT_CREATURE    = 51695,   // Just unit, not creature
+    SPELL_BOTM_EMPTY_BOTTLE_THROW_IMPACT_GROUND      = 51697
+};
+
+// 51694 - BOTM - Empty Bottle Throw - Resolve
+class spell_brewfest_botm_empty_bottle_throw_resolve : public SpellScript
+{
+    PrepareSpellScript(spell_brewfest_botm_empty_bottle_throw_resolve);
+
+    bool Validate(SpellInfo const* /*spellInfo*/) override
+    {
+        return ValidateSpellInfo(
+        {
+            SPELL_BOTM_EMPTY_BOTTLE_THROW_IMPACT_CREATURE,
+            SPELL_BOTM_EMPTY_BOTTLE_THROW_IMPACT_GROUND
+        });
+    }
+
+    void HandleDummy(SpellEffIndex /*effIndex*/)
+    {
+        Unit* caster = GetCaster();
+
+        if (Unit* target = GetHitUnit())
+            caster->CastSpell(target, SPELL_BOTM_EMPTY_BOTTLE_THROW_IMPACT_CREATURE, true);
+        else
+            caster->CastSpell(GetHitDest()->GetPosition(), SPELL_BOTM_EMPTY_BOTTLE_THROW_IMPACT_GROUND, true);
+    }
+
+    void Register() override
+    {
+        OnEffectHitTarget += SpellEffectFn(spell_brewfest_botm_empty_bottle_throw_resolve::HandleDummy, EFFECT_0, SPELL_EFFECT_DUMMY);
+    }
+};
+
 void AddSC_event_brewfest()
 {
     RegisterSpellScript(spell_brewfest_giddyup);
@@ -426,4 +590,9 @@ void AddSC_event_brewfest()
     RegisterSpellScript(spell_brewfest_dismount_ram);
     RegisterSpellScript(spell_brewfest_barker_bunny);
     RegisterSpellScript(spell_brewfest_mount_transformation);
+    RegisterSpellScript(spell_brewfest_botm_bloated);
+    RegisterSpellScript(spell_brewfest_botm_internal_combustion);
+    RegisterSpellScript(spell_brewfest_botm_teach_language);
+    RegisterSpellScript(spell_brewfest_botm_weak_alcohol);
+    RegisterSpellScript(spell_brewfest_botm_empty_bottle_throw_resolve);
 }
