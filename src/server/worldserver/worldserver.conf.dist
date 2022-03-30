@@ -2038,7 +2038,8 @@ PartyLevelReq = 1
 #        Description: Store custom chat channel settings like password, automatic ownership handout
 #                     or ban list in the database. Needs to be enabled to save custom
 #                     world/trade/etc. channels that have automatic ownership handout disabled.
-#                     (.channel set ownership $channel off)
+#                     Login two characters Alliance and Horde and wait 1 min+... and use:
+#                     (.channel set ownership $channel off) - &channel - default: world.
 #        Default:     0 - (Disabled, Blizzlike, Channel settings are lost if last person left)
 #                     1 - (Enabled)
 
