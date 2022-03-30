@@ -1,4 +1,4 @@
---
+--Create 2 Characters on Guid 1 Alliance and Guid 2 Horde.
 INSERT INTO `channels`(`name`,`team`,`announce`,`ownership`,`password`,`bannedList`,`lastUsed`) VALUES
 --Alliance (Ownership - Character must Alliance Faction on Guid 1).
 ('world',67,1,1,'',NULL,0), 

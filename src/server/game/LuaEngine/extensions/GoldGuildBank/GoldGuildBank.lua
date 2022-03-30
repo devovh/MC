@@ -5,8 +5,6 @@
 -- this will also use the players VIP level as a multiplier for deposited gold.
 --
 function GBank_Loot(eventid, player, gold)
-local Paccid = player:GetAccountId()
-
 local currency = ""
 local convert = 0
 local Money = {}
