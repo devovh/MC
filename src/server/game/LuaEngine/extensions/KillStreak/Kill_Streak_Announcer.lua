@@ -3,8 +3,8 @@ local Streak = {};
 local GuildStreak = {};
 local Ann = {};
 
-print("----------------©------------------")
-print("Grumboz Kill Streak loading.")
+print("-----------------------------------")
+print("Kill Streak loading.")
 
 Ann = {
 	[5] = {"`The Boring`", "has earned 5 kills.", 200, 300,},
