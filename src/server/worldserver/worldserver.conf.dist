@@ -2042,14 +2042,14 @@ PartyLevelReq = 1
 #        Default:     0 - (Disabled, Blizzlike, Channel settings are lost if last person left)
 #                     1 - (Enabled)
 
-PreserveCustomChannels = 0
+PreserveCustomChannels = 1
 
 #
 #    PreserveCustomChannelInterval
 #        Description: Interval (in minutes) at which custom channel data is saved to the database
 #        Default:     5 minutes
 
-PreserveCustomChannelInterval = 5
+PreserveCustomChannelInterval = 1
 
 #
 #    PreserveCustomChannelDuration
@@ -2059,7 +2059,7 @@ PreserveCustomChannelInterval = 5
 #        Default:     14 - (Enabled, Clean channels that haven't been used for 14 days)
 #                     0  - (Disabled, Infinite channel storage)
 
-PreserveCustomChannelDuration = 14
+PreserveCustomChannelDuration = 0
 
 #
 #    PartyRaidWarnings
