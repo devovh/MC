@@ -2892,14 +2892,14 @@ Arena.ArenaSeason.InProgress = 1
 #        Description: Start rating for new arena teams.
 #        Default:     0
 
-Arena.ArenaStartRating = 1000
+Arena.ArenaStartRating = 1500
 
 #
 #    Arena.ArenaStartPersonalRating
 #        Description: Start personal rating when joining a team.
 #        Default:     0
 
-Arena.ArenaStartPersonalRating = 1000
+Arena.ArenaStartPersonalRating = 1500
 
 #
 #    Arena.ArenaStartMatchmakerRating
