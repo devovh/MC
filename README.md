@@ -46,6 +46,10 @@
 
 # FUNCTION:
 
+* World Channel - Login 2 Character's (Alliance and Horde Faction). 
+*  Use on Character in GM Account Command: ".channel set ownership world off".
+* /join world on 2 character (Alliance and Horde) on GM Account.
+
 * IRC System.
 
 * Passive Anticheat.
