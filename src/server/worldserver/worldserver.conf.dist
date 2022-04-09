@@ -796,7 +796,7 @@ CharacterCreating.MinLevelForDeathKnight = 55
 #                     1 - (Show intro only for first character of selected race)
 #                     2 - (Disable intro for all classes)
 
-SkipCinematics = 0
+SkipCinematics = 2
 
 #
 #    MaxPlayerLevel
