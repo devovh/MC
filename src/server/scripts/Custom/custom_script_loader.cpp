@@ -38,6 +38,7 @@ void AddSC_Arena_AntiDraw();
 void AddSC_LearnSpellsOnLevelUp();
 void AddSC_StartDualSpec();
 void AddSC_arena_spectator_script();
+void AddSC_skip_StarterArea();
 
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
@@ -65,4 +66,5 @@ void AddCustomScripts()
     AddSC_LearnSpellsOnLevelUp();
 	AddSC_StartDualSpec();
 	AddSC_arena_spectator_script();
+	AddSC_skip_StarterArea();
 }
