@@ -56,6 +56,8 @@
 
 * Passive Anticheat.
 
+* Skip Prologue Death Knight (Instantly).
+
 * PvP Ranks.
 
 * GoMove.
