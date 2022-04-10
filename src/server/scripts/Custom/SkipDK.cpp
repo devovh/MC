@@ -114,6 +114,7 @@ public:
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->SetMoney(0); //Set Money to 0
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -172,6 +173,7 @@ public:
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->SetMoney(0); //Set Money to 0
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -293,6 +295,7 @@ public:
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->SetMoney(0); //Set Money to 0
                 ObjectAccessor::SaveAllPlayers();//Save
                 CloseGossipMenuFor(player);
                 break;
