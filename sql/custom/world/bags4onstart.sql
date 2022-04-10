@@ -63,4 +63,4 @@ INSERT INTO `playercreateinfo_item`(`race`,`class`,`itemid`,`amount`) VALUES
 (11,7,3914,4),
 (11,8,3914,4);
 --
-UPDATE `item_template` SET `SellPrice`='1' WHERE  `entry`=3914;
+UPDATE `item_template` SET `SellPrice`='1' WHERE `entry`=3914;
