@@ -115,6 +115,7 @@ public:
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
+                    player->DestroyItemCount(41751, 10, true); // Black Mushroom
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -174,6 +175,7 @@ public:
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
+                    player->DestroyItemCount(41751, 10, true); // Black Mushroom
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -296,6 +298,7 @@ public:
                 else
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
+                    player->DestroyItemCount(41751, 10, true); // Black Mushroom
                 ObjectAccessor::SaveAllPlayers();//Save
                 CloseGossipMenuFor(player);
                 break;
