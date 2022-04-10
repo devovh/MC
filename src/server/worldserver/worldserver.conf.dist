@@ -3113,7 +3113,7 @@ AllowTrackBothResources = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-PlayerStart.AllReputation = 0
+PlayerStart.AllReputation = 1
 
 #
 #    XP.Boost.Daymask
