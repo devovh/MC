@@ -828,7 +828,7 @@ StartPlayerLevel = 1
 #        Range:       1-MaxPlayerLevel
 #        Default:     55
 
-StartDeathKnightPlayerLevel = 55
+StartDeathKnightPlayerLevel = 68
 
 #
 #    StartPlayerMoney
@@ -5404,7 +5404,7 @@ GM.Skip.Deathknight.Starter.Enable = 1
 #         Default:    55 - (Default)
 #
 
-Skip.Deathknight.Start.Level = 55
+Skip.Deathknight.Start.Level = 68
 
 #    Skip.Deathknight.Optional.Enable
 #    Enables optional to skip when talking to lich king on first creation of dk.

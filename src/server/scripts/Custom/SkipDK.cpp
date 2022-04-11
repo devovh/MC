@@ -58,7 +58,7 @@ public:
 
     void OnLogin(Player* player, bool firstLogin) override
     {
-        int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+        int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 68);
 
         if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Enable", true))
         {
@@ -116,7 +116,10 @@ public:
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
                     player->DestroyItemCount(41751, 10, true); // Black Mushroom
-                ObjectAccessor::SaveAllPlayers();//Save
+                    player->Update(1); // Update Character
+                    ObjectAccessor::SaveAllPlayers();//Save
+                    sWorld->UpdateSessions(1);
+                    sWorld->Update(1);
             }
         }
 
@@ -176,7 +179,11 @@ public:
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
                     player->DestroyItemCount(41751, 10, true); // Black Mushroom
-                ObjectAccessor::SaveAllPlayers();//Save
+                    player->Update(1); // Update Character
+                    ObjectAccessor::SaveAllPlayers();//Save
+                    sWorld->UpdateSessions(1);
+                    sWorld->Update(1);
+                
             }
         }
     }
@@ -234,7 +241,7 @@ public:
 
         bool OnGossipSelect(Player* player, uint32 /*menuId*/, uint32 gossipListId) override
         {
-            int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
+            int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 68);
             CloseGossipMenuFor(player);
 
             switch (gossipListId)
@@ -299,7 +306,11 @@ public:
                     player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
                     player->DestroyItemCount(41751, 10, true); // Black Mushroom
-                ObjectAccessor::SaveAllPlayers();//Save
+                    player->Update(1); // Update Character
+                    ObjectAccessor::SaveAllPlayers();//Save
+                    sWorld->UpdateSessions(1);
+                    sWorld->Update(1);
+
                 CloseGossipMenuFor(player);
                 break;
 
