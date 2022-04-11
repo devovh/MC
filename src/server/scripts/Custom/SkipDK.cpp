@@ -114,12 +114,12 @@ public:
                     player->TeleportTo(0, -8842.00f, 626.47f, 94.09f, 3.56f);//Stormwind
                 else
                     player->TeleportTo(1, 1601.15f, -4378.63f, 9.97f, 2.07f);//Orgrimmar
-                    player->SetMoney(0); //Set Money to 0
-                    player->DestroyItemCount(41751, 10, true); // Black Mushroom
-                    player->Update(1); // Update Character
+                    player->SetMoney(0);//Set Money to 0
+                    player->DestroyItemCount(41751, 10, true);//Black Mushroom
+                    player->Update(1);//Update Character
                     ObjectAccessor::SaveAllPlayers();//Save
-                    sWorld->UpdateSessions(1);
-                    sWorld->Update(1);
+                    sWorld->UpdateSessions(1);//Update Session
+                    sWorld->Update(1);//Update
             }
         }
 
@@ -177,12 +177,12 @@ public:
                     player->TeleportTo(0, -8842.00f, 626.47f, 94.09f, 3.56f);//Stormwind
                 else
                     player->TeleportTo(1, 1601.15f, -4378.63f, 9.97f, 2.07f);//Orgrimmar
-                    player->SetMoney(0); //Set Money to 0
-                    player->DestroyItemCount(41751, 10, true); // Black Mushroom
-                    player->Update(1); // Update Character
+                    player->SetMoney(0);//Set Money to 0
+                    player->DestroyItemCount(41751, 10, true);//Black Mushroom
+                    player->Update(1);//Update Character
                     ObjectAccessor::SaveAllPlayers();//Save
-                    sWorld->UpdateSessions(1);
-                    sWorld->Update(1);
+                    sWorld->UpdateSessions(1);//Update Session
+                    sWorld->Update(1);//Update
                 
             }
         }
@@ -304,12 +304,12 @@ public:
                     player->TeleportTo(0, -8842.00f, 626.47f, 94.09f, 3.56f);//Stormwind
                 else
                     player->TeleportTo(1, 1601.15f, -4378.63f, 9.97f, 2.07f);//Orgrimmar
-                    player->SetMoney(0); //Set Money to 0
-                    player->DestroyItemCount(41751, 10, true); // Black Mushroom
-                    player->Update(1); // Update Character
+                    player->SetMoney(0);//Set Money to 0
+                    player->DestroyItemCount(41751, 10, true);//Black Mushroom
+                    player->Update(1);//Update Character
                     ObjectAccessor::SaveAllPlayers();//Save
-                    sWorld->UpdateSessions(1);
-                    sWorld->Update(1);
+                    sWorld->UpdateSessions(1);//Update Session
+                    sWorld->Update(1);//Update
 
                 CloseGossipMenuFor(player);
                 break;
