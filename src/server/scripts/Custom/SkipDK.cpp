@@ -111,9 +111,9 @@ public:
                 else if (player->GetTeam() == HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
                 if (player->GetTeam() == ALLIANCE)
-                    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+                    player->TeleportTo(0, -8842.00f, 626.47f, 94.09f, 3.56f);//Stormwind
                 else
-                    player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->TeleportTo(1, 1601.15f, -4378.63f, 9.97f, 2.07f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
                     player->DestroyItemCount(41751, 10, true); // Black Mushroom
                     player->Update(1); // Update Character
@@ -174,9 +174,9 @@ public:
                 else if (player->GetTeam() == HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
                 if (player->GetTeam() == ALLIANCE)
-                    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+                    player->TeleportTo(0, -8842.00f, 626.47f, 94.09f, 3.56f);//Stormwind
                 else
-                    player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->TeleportTo(1, 1601.15f, -4378.63f, 9.97f, 2.07f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
                     player->DestroyItemCount(41751, 10, true); // Black Mushroom
                     player->Update(1); // Update Character
@@ -301,9 +301,9 @@ public:
                 else if (player->GetTeam() == HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
                 if (player->GetTeam() == ALLIANCE)
-                    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+                    player->TeleportTo(0, -8842.00f, 626.47f, 94.09f, 3.56f);//Stormwind
                 else
-                    player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->TeleportTo(1, 1601.15f, -4378.63f, 9.97f, 2.07f);//Orgrimmar
                     player->SetMoney(0); //Set Money to 0
                     player->DestroyItemCount(41751, 10, true); // Black Mushroom
                     player->Update(1); // Update Character
