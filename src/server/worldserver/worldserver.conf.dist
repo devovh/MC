@@ -1221,7 +1221,7 @@ FlashAtStart = 1
 #        Example:     "Welcome to John's Server!@This server is proud to be powered by Trinity Core."
 #        Default:     "Welcome to a Trinity Core server."
 
-Motd = "Welcome to a MCore server. Global Chat - /join world"
+Motd = "Welcome to a Molten server. Global Chat - /join world"
 
 #
 #    Server.LoginInfo
@@ -2668,7 +2668,7 @@ Battleground.QueueAnnouncer.PlayerOnly = 1
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Battleground.StoreStatistics.Enable = 0
+Battleground.StoreStatistics.Enable = 1
 
 #
 #    Battleground.TrackDeserters.Enable
@@ -2676,7 +2676,7 @@ Battleground.StoreStatistics.Enable = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Battleground.TrackDeserters.Enable = 0
+Battleground.TrackDeserters.Enable = 1
 
 #
 #    Battleground.InvitationType
