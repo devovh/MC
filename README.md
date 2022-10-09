@@ -27,6 +27,20 @@
   Use on Character in GM Account Command: ".channel set ownership world off".
  /join world on 2 character (Alliance and Horde) on GM Account.
 
+# Item Store (Website):
+
+* Premium Item ID: 9017 (Donate)
+
+* Emblem of Frost (Donate)
+
+* Frozen Orb (Donate)
+
+* Spectral Mounts: Spectral Tiger, Swift Spectral Tiger, Celestial Steed (Donate)
+
+* Foror's Crate of Endless Resist Gear Storage (Vote) 
+
+* Instance Unbind: Reset CD Instances (Donate) - Default Reset every 2 days.
+
 # NPC:
 
 * .npc add 190112 - Arena Spectator NPC.
