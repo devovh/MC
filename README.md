@@ -8,6 +8,11 @@
 
 * MySQL version required: 5.7 / Download: https://dev.mysql.com/downloads/mysql/5.7.html
 
+* Installing a newer version of MySQL results in a Crash Emulator. 
+* It is possible that at a later date there will be an update of this, 
+* so everything will be normal on the latest version of MySQL. 
+* But it doesn't make such a big problem because version 5.7 is also a good solution.
+
 * Based on TrinityCore 3.3.5a latest release, Updates are added every now and then.
 
 * This emulator is inspired by the designation for the High Rate Server range.
