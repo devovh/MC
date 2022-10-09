@@ -6,6 +6,8 @@
 
 * How to Compile - Read Wiki: https://trinitycore.info/en/home
 
+* MySQL version required: 5.7 / Download: https://dev.mysql.com/downloads/mysql/5.7.html
+
 * Based on TrinityCore 3.3.5a latest release, Updates are added every now and then.
 
 * This emulator is inspired by the designation for the High Rate Server range.
