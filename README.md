@@ -39,7 +39,9 @@
 
 * Foror's Crate of Endless Resist Gear Storage (Vote) 
 
-* Instance Unbind: Reset CD Instances (Donate) - Default Reset every 2 days.
+* Instance Unbind: Reset CD Instances (Donate) - Default Reset every 2 days or
+
+* Free .instance unbind all command for all players.
 
 # NPC:
 
