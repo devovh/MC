@@ -1,4 +1,4 @@
-# MC Wotlk 3.3.5a
+# MC Wotlk 3.3.5a High Rates Server
 
 * Lua Scripts Support.
 
