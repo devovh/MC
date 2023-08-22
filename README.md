@@ -118,3 +118,5 @@
 * Reward System.
 
 * Duel Reset (CD/HP/MANA).
+
+* Chat Log.
