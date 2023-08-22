@@ -116,3 +116,5 @@
 * Notify Mute.
 
 * Reward System.
+
+* Duel Reset (CD/HP/MANA).
