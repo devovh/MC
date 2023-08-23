@@ -39,6 +39,7 @@ void AddSC_LearnSpellsOnLevelUp();
 void AddSC_StartDualSpec();
 void AddSC_arena_spectator_script();
 void AddSC_skip_StarterArea();
+void AddSC_NPC_Profession();
 
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
@@ -67,4 +68,5 @@ void AddCustomScripts()
 	AddSC_StartDualSpec();
 	AddSC_arena_spectator_script();
 	AddSC_skip_StarterArea();
+	AddSC_NPC_Profession();
 }
