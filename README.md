@@ -120,3 +120,9 @@
 * Duel Reset (CD/HP/MANA).
 
 * Chat Log.
+
+# Update Core/DB:
+
+* Tab: https://github.com/ElunaLuaEngine/ElunaTrinityWotlk/commits/master?after=6963fe42946d2d3a7dea34b6c1f63b2e196ab567+524&branch=master&qualified_name=refs%2Fheads%2Fmaster
+
+* Update from this patch: https://github.com/ElunaLuaEngine/ElunaTrinityWotlk/commit/d611925dc7ab2b3f19c5ee9e0f75b8dfb6de1291
