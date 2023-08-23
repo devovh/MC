@@ -69,6 +69,8 @@
 
 * .npc add 190001 - Arena 1v1 NPC.
 
+* .npc add 190019 - Free Professions NPC.
+
 # ITEM:
 
 * .add item 9017 - Premium Item, Add on Website Store - This item not lootable.
