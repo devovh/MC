@@ -1,5 +1,7 @@
 # MC Wotlk 3.3.5a High Rates Server
 
+* Server: https://molten.online
+
 * Lua Scripts Support.
 
 * Custom Scripts.
